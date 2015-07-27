@@ -1,0 +1,70 @@
+{
+    "name": "vigour-example",
+    "version": "1.0.0",
+    "description": "Example vigour app",
+    "main": "index.js",
+    "scripts": {
+        "start": "gaston dev",
+        "build": "vNative build",
+        "test": "gaston test",
+        "release": "packer -r -c package.json,.package.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vigour-io/vigour-example.git"
+    },
+    "keywords": [
+        "vigour",
+        "example"
+    ],
+    "author": "Shawn Inder <shawn@vigour.io>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/vigour-io/vigour-example/issues"
+    },
+    "homepage": "https://github.com/vigour-io/vigour-example",
+    "dependencies": {
+        "vigour-native-plugin": "git+ssh://git@github.com:vigour-io/vigour-native-plugin.git",
+        "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git"
+    },
+    "devDependencies": {
+        "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
+    },
+    "vigour": {
+        "native": {
+            "plugins": {
+                "plugin": "vigour-native-plugin"
+            },
+            "platforms": {
+                "web": true,
+                "ios": {
+                    "productName": "Vigour Example",
+                    "organizationName": "Vigour",
+                    "organizationIdentifier": "io.vigour.example",
+                    "buildNumber": "1"
+                },
+                "android": {
+                    "packageName": "io.vigour.example"
+                }
+            }
+        }
+    },
+    "gaston": {
+        "port": 8080,
+        "socket-port": 9000,
+        "no-auto-reload": false,
+        "no-package": false,
+        "bundle": "./",
+        "build": "./",
+        "browserify": {
+            "transforms": []
+        },
+        "less": {
+            "options": {}
+        },
+        "smaps": "true",
+        "source-maps": true,
+        "remote-logging": false,
+        "require-paths": {}
+    }
+}
