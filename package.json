@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "gaston dev",
-        "build": "vNative build",
+        "build": "./node_modules/vigour-native-plugin/node_modules/.bin/vNative build",
         "test": "gaston test",
         "release": "packer -r -c package.json,.package.json"
     },
@@ -36,7 +36,6 @@
                 "plugin": "vigour-native-plugin"
             },
             "platforms": {
-                "web": true,
                 "ios": {
                     "productName": "Vigour Example",
                     "organizationName": "Vigour",
@@ -46,6 +45,14 @@
                 "android": {
                     "packageName": "io.vigour.example"
                 }
+            }
+        },
+        "packer": {
+            "web": "index.html",
+            "assets": {
+                "index.html": true,
+                "build.js": true,
+                "build.css": true
             }
         }
     },
