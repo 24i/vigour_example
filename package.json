@@ -48,11 +48,11 @@
             }
         },
         "packer": {
-            "web": "index.html",
+            "web": "src/index.html",
             "assets": {
-                "index.html": true,
-                "build.js": true,
-                "build.css": true
+                "src/index.html": true,
+                "src/build.js": true,
+                "src/build.css": true
             }
         }
     },
