@@ -28,7 +28,8 @@
         "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git"
     },
     "devDependencies": {
-        "gaston": "git+ssh://git@github.com:vigour-io/gaston.git"
+        "gaston": "git+ssh://git@github.com:vigour-io/gaston.git",
+        "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git"
     },
     "vigour": {
         "native": {
