@@ -33,15 +33,13 @@
     },
     "vigour": {
         "native": {
-            "plugins": {
-                "plugin": "vigour-native-plugin"
-            },
             "platforms": {
                 "ios": {
                     "productName": "Vigour Example",
                     "organizationName": "Vigour",
                     "organizationIdentifier": "io.vigour.example",
-                    "buildNumber": "1"
+                    "buildNumber": "1",
+                    "appIndexPath": "src/index.html"
                 },
                 "android": {
                     "packageName": "io.vigour.example"
@@ -52,8 +50,7 @@
             "web": "src/index.html",
             "assets": {
                 "src/index.html": true,
-                "src/build.js": true,
-                "src/build.css": true
+                "src/build.js": true
             }
         }
     },
