@@ -1,1 +1,1 @@
-require('~/global.less');
+require('./global.less');
