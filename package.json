@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -50,7 +50,7 @@
             "web": "src/index.html",
             "assets": {
                 "src/index.html": true,
-                "src/build.js": true
+                "build.js": true
             }
         }
     },
