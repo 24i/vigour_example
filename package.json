@@ -1,11 +1,13 @@
 {
     "name": "vigour-example",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
         "start": "./node_modules/.bin/gaston dev",
         "build": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build",
+        "ios": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p ios",
+        "android": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p android",
         "test": "./node_modules/.bin/gaston test",
         "release": "packer -r -c package.json,.package.json"
     },
@@ -73,9 +75,3 @@
         "require-paths": {}
     }
 }
-
-
-
-
-
-
