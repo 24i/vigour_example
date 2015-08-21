@@ -1,76 +1,79 @@
 {
-    "name": "vigour-example",
-    "version": "1.0.3",
-    "description": "Example vigour app",
-    "main": "index.js",
-    "scripts": {
-        "start": "./node_modules//bin/gaston dev",
-        "build": "./node_modules//bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build",
-        "test": "./node_modules//bin/gaston test",
-        "release": "packer -r -c package.json,.package.json"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/vigour-io/vigour-example.git"
-    },
-    "keywords": [
-        "vigour",
-        "example"
-    ],
-    "author": "Shawn Inder <shawn@vigour.io>",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/vigour-io/vigour-example/issues"
-    },
-    "homepage": "https://github.com/vigour-io/vigour-example",
-    "dependencies": {
-        "vigour-native-plugin": "git+ssh://git@github.com:vigour-io/vigour-native-plugin.git",
-        "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git"
-    },
-    "devDependencies": {
-        "gaston": "git+ssh://git@github.com:vigour-io/gaston.git#dev",
-        "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git"
-    },
-    "vigour": {
-        "native": {
-            "platforms": {
-                "ios": {
-                    "productName": "Vigour Example",
-                    "organizationName": "Vigour",
-                    "organizationIdentifier": "io.vigour.example",
-                    "buildNumber": "1",
-                    "appIndexPath": "src/index.html",
-										"splashScreen": "assets/img/splash.png"
-                },
-                "android": {
-                    "packageName": "io.vigour.example"
-                }
-            }
+  "name": "vigour-example",
+  "version": "1.0.4",
+  "description": "Example vigour app",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules//bin/gaston dev",
+    "build": "./node_modules//bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build",
+    "test": "./node_modules//bin/gaston test",
+    "release": "packer -r -c package.json,.package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vigour-io/vigour-example.git"
+  },
+  "keywords": [
+    "vigour",
+    "example"
+  ],
+  "author": "Shawn Inder <shawn@vigour.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigour-io/vigour-example/issues"
+  },
+  "homepage": "https://github.com/vigour-io/vigour-example",
+  "dependencies": {
+    "install": "^0.1.8",
+    "npm": "^2.13.5",
+    "vigour-native-plugin": "git+ssh://git@github.com:vigour-io/vigour-native-plugin.git",
+    "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git"
+  },
+  "devDependencies": {
+    "gaston": "git+ssh://git@github.com:vigour-io/gaston.git#dev",
+    "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git"
+  },
+  "vigour": {
+    "native": {
+      "platforms": {
+        "ios": {
+          "productName": "Vigour Example",
+          "organizationName": "Vigour",
+          "organizationIdentifier": "io.vigour.example",
+          "buildNumber": "1",
+          "appIndexPath": "src/index.html",
+          "splashScreen": "assets/img/splash.png",
+					"appIcon": "assets/img/appIcon.png"
         },
-        "packer": {
-            "web": "src/index.html",
-            "assets": {
-                "src/index.html": true,
-                "build.js": true
-            }
+        "android": {
+          "packageName": "io.vigour.example"
         }
+      }
     },
-    "gaston": {
-        "port": 8080,
-        "socket-port": 9000,
-        "no-auto-reload": false,
-        "no-package": false,
-        "bundle": "./",
-        "build": "./",
-        "browserify": {
-            "transforms": []
-        },
-        "less": {
-            "options": {}
-        },
-        "smaps": "true",
-        "source-maps": true,
-        "remote-logging": false,
-        "require-paths": {}
+    "packer": {
+      "web": "src/index.html",
+      "assets": {
+        "src/index.html": true,
+        "build.js": true
+      }
     }
+  },
+  "gaston": {
+    "port": 8080,
+    "socket-port": 9000,
+    "no-auto-reload": false,
+    "no-package": false,
+    "bundle": "./",
+    "build": "./",
+    "browserify": {
+      "transforms": []
+    },
+    "less": {
+      "options": {}
+    },
+    "smaps": "true",
+    "source-maps": true,
+    "remote-logging": false,
+    "require-paths": {}
+  }
 }
