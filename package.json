@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -47,6 +47,19 @@
                 },
                 "android": {
                     "packageName": "io.vigour.example"
+                },
+                 "samsungtv": {
+                  "productName": "Vigour Samsung Example",
+                  "xmlConfig": {
+                    "category": "video",
+                    "name": "Vigour",
+                    "author": "Vigour",
+                    "description": "Vigour",
+                    "version": "1.0.0"
+                  }
+                },
+                "lgtv": {
+                  "productName": "Vigour LG smart tv Example"
                 }
             }
         },
