@@ -8,6 +8,7 @@
         "build": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build",
         "ios": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p ios",
         "android": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p android",
+        "samsungtv": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p samsungtv",
         "test": "./node_modules/.bin/gaston test",
         "release": "packer -r -c package.json,.package.json"
     },
