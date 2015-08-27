@@ -78,7 +78,7 @@
         "no-auto-reload": false,
         "no-package": false,
         "bundle": "./",
-        "build": "./",
+        "build": "./build.html",
         "browserify": {
             "transforms": []
         },
@@ -87,7 +87,8 @@
         },
         "smaps": "true",
         "source-maps": true,
-        "remote-logging": false,
+        "smaps": true,
+        "remote-logging": true,
         "require-paths": {}
     }
 }
