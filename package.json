@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -8,6 +8,7 @@
         "build": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build",
         "ios": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p ios",
         "android": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p android",
+        "samsungtv": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p samsungtv",
         "test": "./node_modules/.bin/gaston test",
         "release": "packer -r -c package.json,.package.json"
     },
@@ -41,19 +42,36 @@
                     "organizationName": "Vigour",
                     "organizationIdentifier": "io.vigour.example",
                     "buildNumber": "1",
-                    "appIndexPath": "src/index.html"
+                    "appIndexPath": "build.html",
+										"appIcon":"assets/img/appIcon.png",
+										"splashScreen":"assets/img/splash.png"
                 },
                 "android": {
                     "applicationId": "io.vigour.example",
                     "appIndexPath": "src/index.html"
+                },
+                 "samsungtv": {
+                  "productName": "Vigour Samsung Example",
+                  "xmlConfig": {
+                    "category": "video",
+                    "name": "Vigour",
+                    "author": "Vigour",
+                    "description": "Vigour",
+                    "version": "1.0.0"
+                  }
+                },
+                "lgtv": {
+                  "productName": "Vigour LG smart tv Example"
                 }
             }
         },
         "packer": {
-            "web": "src/index.html",
+            "web": "build.html",
             "assets": {
-                "src/index.html": true,
-                "build.js": true
+                "build.html": true,
+                "build.js": true,
+                "build.css": true,
+                "assets": "*"
             }
         }
     },
@@ -63,7 +81,7 @@
         "no-auto-reload": false,
         "no-package": false,
         "bundle": "./",
-        "build": "./",
+        "build": "./build.html",
         "browserify": {
             "transforms": []
         },
@@ -72,7 +90,8 @@
         },
         "smaps": "true",
         "source-maps": true,
-        "remote-logging": false,
+        "smaps": true,
+        "remote-logging": true,
         "require-paths": {}
     }
 }
