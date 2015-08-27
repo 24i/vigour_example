@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -44,7 +44,8 @@
                     "appIndexPath": "src/index.html"
                 },
                 "android": {
-                    "packageName": "io.vigour.example"
+                    "applicationId": "io.vigour.example",
+                    "appIndexPath": "src/index.html"
                 }
             }
         },
