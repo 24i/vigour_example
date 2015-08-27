@@ -42,7 +42,7 @@
                     "organizationName": "Vigour",
                     "organizationIdentifier": "io.vigour.example",
                     "buildNumber": "1",
-                    "appIndexPath": "src/index.html",
+                    "appIndexPath": "build.html",
 										"appIcon":"assets/img/appIcon.png",
 										"splashScreen":"assets/img/splash.png"
                 },
@@ -65,10 +65,12 @@
             }
         },
         "packer": {
-            "web": "src/index.html",
+            "web": "build.html",
             "assets": {
-                "src/index.html": true,
-                "build.js": true
+                "build.html": true,
+                "build.js": true,
+                "build.css": true,
+                "assets": "*"
             }
         }
     },
