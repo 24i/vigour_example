@@ -62,7 +62,7 @@
         "no-auto-reload": false,
         "no-package": false,
         "bundle": "./",
-        "build": "./",
+        "build": "./build.html",
         "browserify": {
             "transforms": []
         },
