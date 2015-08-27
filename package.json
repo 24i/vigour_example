@@ -47,7 +47,7 @@
 										"splashScreen":"assets/img/splash.png"
                 },
                 "android": {
-                    "packageName": "io.vigour.example"
+                    "applicationId": "io.vigour.example"
                 },
                  "samsungtv": {
                   "productName": "Vigour Samsung Example",
