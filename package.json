@@ -20,8 +20,15 @@
         "vigour",
         "example"
     ],
-    "author": "Shawn Inder <shawn@vigour.io>",
+    "author": "Vigour",
     "license": "ISC",
+    "contributors": [{
+      "name": "Shawn Inder",
+      "email": "shawninder@gmail.com"
+    }],
+    "engines": {
+
+    },
     "bugs": {
         "url": "https://github.com/vigour-io/vigour-example/issues"
     },
