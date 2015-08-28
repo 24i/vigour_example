@@ -48,7 +48,7 @@
               },
               "android": {
                 "applicationId": "io.vigour.example",
-                "appIndexPath": "src/index.html"
+                "appIndexPath": "build.html"
               },
                "samsungtv": {
                 "productName": "Vigour Samsung Example",
