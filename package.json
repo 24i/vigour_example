@@ -43,8 +43,8 @@
                 "organizationIdentifier": "io.vigour.example",
                 "buildNumber": "1",
                 "appIndexPath": "build.html",
-								"appIcon":"assets/img/appIcon.png",
-								"splashScreen":"assets/img/splash.png"
+                "appIcon": "assets/img/appIcon.png",
+                "splashScreen": "assets/img/splash.png"
               },
               "android": {
                 "applicationId": "io.vigour.example",
