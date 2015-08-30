@@ -22,10 +22,9 @@
     ],
     "author": "Vigour",
     "license": "ISC",
-    "contributors": [{
-      "name": "Shawn Inder",
-      "email": "shawninder@gmail.com"
-    }],
+    "contributors": [
+      "Shawn Inder <shawn@vigour.io>"
+    ],
     "engines": {
 
     },
