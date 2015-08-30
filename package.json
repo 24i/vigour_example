@@ -23,7 +23,11 @@
     "author": "Vigour",
     "license": "ISC",
     "contributors": [
-      "Shawn Inder <shawn@vigour.io>"
+      "Shawn Inder <shawn@vigour.io>",
+      "Alexander Van Der Werff <alex@vigour.io>",
+      "Michiel Van Liempt <michiel@vigour.io>",
+      "Renan Carvalho <renan@vigour.io>",
+      "Andre Padez <andre@vigour.io>"
     ],
     "engines": {
 
