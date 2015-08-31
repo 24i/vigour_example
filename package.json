@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -47,8 +47,11 @@
 										"splashScreen":"assets/img/splash.png"
                 },
                 "android": {
+                    "productName": "Vigour Example",
                     "applicationId": "io.vigour.example",
-                    "appIndexPath": "src/index.html"
+                    "appIndexPath": "build.html",
+                    "appIcon": "assets/img/appIcon.png",
+                    "splashScreen": "assets/img/splash.png"
                 },
                  "samsungtv": {
                   "productName": "Vigour Samsung Example",
