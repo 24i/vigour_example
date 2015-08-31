@@ -37,35 +37,35 @@
     "vigour": {
         "native": {
             "platforms": {
-                "ios": {
-                    "productName": "Vigour Example",
-                    "organizationName": "Vigour",
-                    "organizationIdentifier": "io.vigour.example",
-                    "buildNumber": "1",
-                    "appIndexPath": "build.html",
-										"appIcon":"assets/img/appIcon.png",
-										"splashScreen":"assets/img/splash.png"
-                },
-                "android": {
-                    "productName": "Vigour Example",
-                    "applicationId": "io.vigour.example",
-                    "appIndexPath": "build.html",
-                    "appIcon": "assets/img/appIcon.png",
-                    "splashScreen": "assets/img/splash.png"
-                },
-                 "samsungtv": {
-                  "productName": "Vigour Samsung Example",
-                  "xmlConfig": {
-                    "category": "video",
-                    "name": "Vigour",
-                    "author": "Vigour",
-                    "description": "Vigour",
-                    "version": "1.0.0"
-                  }
-                },
-                "lgtv": {
-                  "productName": "Vigour LG smart tv Example"
+              "ios": {
+                "productName": "Vigour Example",
+                "organizationName": "Vigour",
+                "organizationIdentifier": "io.vigour.example",
+                "buildNumber": "1",
+                "appIndexPath": "build.html",
+                "appIcon": "assets/img/appIcon.png",
+                "splashScreen": "assets/img/splash.png"
+              },
+              "android": {
+                "productName": "Vigour Example",
+                "applicationId": "io.vigour.example",
+                "appIndexPath": "build.html",
+                "appIcon": "assets/img/appIcon.png",
+                "splashScreen": "assets/img/splash.png"
+              },
+              "samsungtv": {
+                "productName": "Vigour Samsung Example",
+                "xmlConfig": {
+                  "category": "video",
+                  "name": "Vigour",
+                  "author": "Vigour",
+                  "description": "Vigour",
+                  "version": "1.0.0"
                 }
+              },
+              "lgtv": {
+                "productName": "Vigour LG smart tv Example"
+              }
             }
         },
         "packer": {
