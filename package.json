@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -51,7 +51,11 @@
                     "name": "Vigour",
                     "author": "Vigour",
                     "description": "Vigour",
-                    "version": "1.0.0"
+                    "version": "1.0.0",
+                    "ThumbIcon":"path/ThumbIcon.png",
+                    "BigThumbIcon":"path/BigThumbIcon.png",
+                    "ListIcon":"path/ListIcon.png",
+                    "BigListIcon":"path/BigListIcon.png"
                   }
                 },
                 "lgtv":{
