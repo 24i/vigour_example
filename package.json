@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -53,7 +53,10 @@
                     "description": "Vigour",
                     "version": "1.0.0"
                   }
-              }
+                },
+                "lgtv":{
+                    "productName":"Vigour LG Example"
+                }
             }
         },
         "packer": {
