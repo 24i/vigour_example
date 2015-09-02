@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -95,7 +95,7 @@
         "no-auto-reload": false,
         "no-package": false,
         "bundle": "./",
-        "build": "./build.html",
+        "build": "./",
         "browserify": {
             "transforms": []
         },
