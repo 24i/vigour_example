@@ -23,11 +23,11 @@
     "author": "Vigour",
     "license": "ISC",
     "contributors": [
-      "Shawn Inder <shawn@vigour.io>",
-      "Alexander Van Der Werff <alex@vigour.io>",
-      "Michiel Van Liempt <michiel@vigour.io>",
-      "Renan Carvalho <renan@vigour.io>",
-      "Andre Padez <andre@vigour.io>"
+        "Shawn Inder <shawn@vigour.io>",
+        "Alexander Van Der Werff <alex@vigour.io>",
+        "Michiel Van Liempt <michiel@vigour.io>",
+        "Renan Carvalho <renan@vigour.io>",
+        "Andre Padez <andre@vigour.io>"
     ],
     "engines": {
 
@@ -47,36 +47,41 @@
     "vigour": {
         "native": {
             "platforms": {
-              "ios": {
-                "productName": "Vigour Example",
-                "organizationName": "Vigour",
-                "organizationIdentifier": "io.vigour.example",
-                "buildNumber": "1",
-                "appIndexPath": "build.html",
-                "appIcon": "assets/img/appIcon.png",
-                "splashScreen": "assets/img/splash.png"
-              },
-              "android": {
-                "productName": "Vigour Example",
-                "applicationId": "io.vigour.example",
-                "appIndexPath": "build.html",
-                "appIcon": "assets/img/appIcon.png",
-                "splashScreen": "assets/img/splash.png",
-                "splashDuration": 1500
-              },
-              "samsungtv": {
-                "productName": "Vigour Samsung Example",
-                "xmlConfig": {
-                  "category": "video",
-                  "name": "Vigour",
-                  "author": "Vigour",
-                  "description": "Vigour",
-                  "version": "1.0.0"
+                "ios": {
+                    "productName": "Vigour Example",
+                    "organizationName": "Vigour",
+                    "organizationIdentifier": "io.vigour.example",
+                    "buildNumber": "1",
+                    "appIndexPath": "build.html",
+                    "appIcon": "assets/img/appIcon.png",
+                    "splashScreen": "assets/img/splash.png"
+                },
+                "android": {
+                    "productName": "Vigour Example",
+                    "applicationId": "io.vigour.example",
+                    "appIndexPath": "build.html",
+                    "appIcon": "assets/img/appIcon.png",
+                    "splashScreen": "assets/img/splash.png",
+                    "splashDuration": 1500
+                },
+
+                "samsungtv": {
+                    "productName": "Vigour Samsung Example",
+                    "xmlConfig": {
+                        "category": "video",
+                        "name": "Vigour",
+                        "author": "Vigour",
+                        "description": "Vigour",
+                        "version": "1.0.0",
+                        "ThumbIcon":"path/ThumbIcon.png",
+                        "BigThumbIcon":"path/BigThumbIcon.png",
+                        "ListIcon":"path/ListIcon.png",
+                        "BigListIcon":"path/BigListIcon.png"
+                    }
+                },
+                "lgtv": {
+                    "productName":"Vigour LG Example"
                 }
-              },
-              "lgtv": {
-                "productName": "Vigour LG smart tv Example"
-              }
             }
         },
         "packer": {
