@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -73,10 +73,12 @@
                         "author": "Vigour",
                         "description": "Vigour",
                         "version": "1.0.0",
-                        "ThumbIcon": "assets/img/appIcon.png",
-                        "BigThumbIcon": "assets/img/appIcon.png",
-                        "ListIcon": "assets/img/appIcon.png",
-                        "BigListIcon": "assets/img/appIcon.png"
+                        "icons": {
+                            "ThumbIcon": "assets/img/appIcon.png",
+                            "BigThumbIcon": "assets/img/splash.png",
+                            "ListIcon": "assets/img/appIcon.png",
+                            "BigListIcon": "assets/img/appIcon.png"
+                        }
                     }
                 },
                 "lgtv": {
