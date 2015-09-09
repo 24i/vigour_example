@@ -1,6 +1,6 @@
 {
     "name": "vigour-example",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "Example vigour app",
     "main": "index.js",
     "scripts": {
@@ -82,7 +82,20 @@
                     }
                 },
                 "lgtv": {
-                    "productName":"Vigour LG Example"
+                    "productName":"Vigour LG Net Cast Example"
+                },
+                 "lgwebostv": {
+                    "appinfo":{
+                        "id": "com.yourdomain.vigourTest",
+                        "version": "0.0.1",
+                        "vendor": "Vigour",
+                        "type": "web",
+                        "main": "index.html",
+                        "title": "Vigour",
+                        "uiRevision": 2,
+                        "icon": "assets/img/appicon.png",
+                        "largeIcon": "assets/img/appicon.png"
+                    }
                 }
             }
         },
