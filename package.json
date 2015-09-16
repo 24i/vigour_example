@@ -77,10 +77,12 @@
                         "author": "Vigour",
                         "description": "Vigour",
                         "version": "1.0.0",
-                        "ThumbIcon": "assets/img/appIcon.png",
-                        "BigThumbIcon": "assets/img/appIcon.png",
-                        "ListIcon": "assets/img/appIcon.png",
-                        "BigListIcon": "assets/img/appIcon.png"
+                        "icons": {
+                          "ThumbIcon": "assets/img/appIcon.png",
+                          "BigThumbIcon": "assets/img/appIcon.png",
+                          "ListIcon": "assets/img/appIcon.png",
+                          "BigListIcon": "assets/img/appIcon.png"
+                        }
                     }
                 },
                 "lgtv": {
