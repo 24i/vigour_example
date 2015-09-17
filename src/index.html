@@ -10,8 +10,9 @@
   </head>
   <body>
     <div>Plugin tester</div>
-    <div onclick="hideStatusBar()">hide statusbar</div>
-    <div onclick="showStatusBar()">show statusbar</div>
+    <div>for now tests without bridge because element/vjs is broken. This only works for Android</div>
+    <div onclick="window.NativeInterface.send(JSON.stringify([1, 'statusbar', 'hide', 0]))">hide statusbar</div>
+    <div onclick="window.NativeInterface.send(JSON.stringify([1, 'statusbar', 'show', 0]))">show statusbar</div>
     <div id="log"><h3>Bridge log</h3></div>
     <script src="bundle.js" type="text/javascript"></script>
   </body>
