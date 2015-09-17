@@ -1,38 +1,35 @@
 require('./global.less')
-// var statusBar = require('vigour-native-statusBar')
+var statusBar = require('vigour-native-statusBar')
+var Element = require('element/lib/element')
 
-// function showStatusBar () {
-//   statusBar.set({visibility: true})
-// }
+Element.prototype.inject(
+  require('element/lib/property/attributes'),
+  require('element/lib/property/text')
+)
 
-// function hideStatusBar () {
-//   statusBar.set({visibility: false})
-// }
+var app = require('element/lib/app')
 
-/*
-function msg () {
-  var l = arguments.length
-  var i
-  var str
-  var body = document.getElementsByTagName('body')[0]
-  var p
-  for (i = 0; i < l; i += 1) {
-    try {
-      str = JSON.stringify(arguments[i], null, 2)
-
-      if (str === '{}' ||
-        str === '[object Object]' ||
-        str === '[object Array]') {
-        throw new Error('Stringifying makes value useless')
-      }
-    } catch (e) {
-      str = arguments[i].toString()
+var show = new Element({
+  $node: 'p',
+  $text: 'show statusbar',
+  $on: {
+    $click: function (event) {
+      statusBar.set({visibility: true})
     }
-
-    p = document.createElement('p')
-    var tN = document.createTextNode(str)
-    p.appendChild(tN)
-    body.appendChild(p)
   }
-}
-*/
+})
+
+var hide = new Element({
+  $node: 'p',
+  $text: 'hide statusbar',
+  $on: {
+    $click: function (event) {
+      statusBar.set({visibility: false})
+    }
+  }
+})
+
+app.set({
+  hide: hide,
+  show: show
+})

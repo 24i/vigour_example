@@ -37,6 +37,7 @@
     },
     "homepage": "https://github.com/vigour-io/vigour-example",
     "dependencies": {
+        "element": "git+ssh://git@github.com:vigour-io/element.git#develop",
         "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
         "vigour-native-plugin": "git+ssh://git@github.com:vigour-io/vigour-native-plugin.git",
         "vigour-native-plugintest": "git+ssh://git@github.com:vigour-io/vigour-native-plugintest.git",
