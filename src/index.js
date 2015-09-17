@@ -1,13 +1,13 @@
 require('./global.less')
-var statusBar = require('vigour-native-statusBar')
+// var statusBar = require('vigour-native-statusBar')
 
-function showStatusBar () {
-  statusBar.set({visibility: true})
-}
+// function showStatusBar () {
+//   statusBar.set({visibility: true})
+// }
 
-function hideStatusBar () {
-  statusBar.set({visibility: false})
-}
+// function hideStatusBar () {
+//   statusBar.set({visibility: false})
+// }
 
 /*
 function msg () {

@@ -2,14 +2,14 @@
     "name": "vigour-example",
     "version": "1.0.10",
     "description": "Example vigour app",
-    "main": "index.js",
     "scripts": {
-        "start": "./node_modules/.bin/gaston dev",
-        "build": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build",
-        "ios": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p ios",
-        "android": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p android",
-        "samsungtv": "./node_modules/.bin/gaston build; ./node_modules/vigour-native-plugin/node_modules/.bin/vNative build -p samsungtv",
+        "start": "./node_modules/.bin/gaston",
         "test": "./node_modules/.bin/gaston test",
+        "build": "./node_modules/.bin/gaston build -s src",
+        "all": "npm run build; ./node_modules/.bin/vNative build",
+        "ios": "npm run build; ./node_modules/.bin/vNative build -p ios",
+        "android": "npm run build; ./node_modules/.bin/vNative build -p android",
+        "samsungtv": "npm run build; ./node_modules/.bin/vNative build -p samsungtv",
         "release": "packer -r -c package.json,.package.json"
     },
     "repository": {
@@ -37,12 +37,13 @@
     },
     "homepage": "https://github.com/vigour-io/vigour-example",
     "dependencies": {
+        "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
         "vigour-native-plugin": "git+ssh://git@github.com:vigour-io/vigour-native-plugin.git",
         "vigour-native-plugintest": "git+ssh://git@github.com:vigour-io/vigour-native-plugintest.git",
         "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git"
     },
     "devDependencies": {
-        "gaston": "git+ssh://git@github.com:vigour-io/gaston.git#dev",
+        "gaston": "^0.14.0",
         "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git"
     },
     "vigour": {

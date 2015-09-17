@@ -1,7 +1,5 @@
-var index = require('~/src/')
+/* global describe, it */
 
-describe("Example App", function () {
-	it("has tests", function () {
-		expect(index).to.exist
-	})
+describe('Example App', function () {
+  it('has tests')
 })
