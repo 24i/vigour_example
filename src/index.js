@@ -1,35 +1,43 @@
 require('./global.less')
-var statusBar = require('vigour-native-statusBar')
+// var statusBar = require('vigour-native-statusBar')
 var Element = require('element/lib/element')
-
-Element.prototype.inject(
-  require('element/lib/property/attributes'),
-  require('element/lib/property/text')
-)
-
 var app = require('element/lib/app')
 
+Element.prototype.inject(
+  require('element/lib/property/text'),
+  require('element/lib/events/click')
+)
+
 var show = new Element({
-  $node: 'p',
   $text: 'show statusbar',
   $on: {
     $click: function (event) {
-      statusBar.set({visibility: true})
+      console.log('show clicked')
+      status.$text.$val = 'shown'
+      this.$text.$val += '.'
+    // statusBar.set({visibility: true})
     }
   }
 })
 
 var hide = new Element({
-  $node: 'p',
   $text: 'hide statusbar',
   $on: {
     $click: function (event) {
-      statusBar.set({visibility: false})
+      console.log('hide clicked')
+      status.$text.$val = 'hidden'
+      this.$text.$val += '.'
+    // statusBar.set({visibility: false})
     }
   }
 })
 
+var status = new Element({
+  $text: 'idle'
+})
+
 app.set({
   hide: hide,
-  show: show
+  show: show,
+  status: status
 })
