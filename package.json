@@ -57,7 +57,8 @@
                     "buildNumber": "1",
                     "appIndexPath": "build.html",
                     "appIcon": "assets/img/appIcon.png",
-                    "splashScreen": "assets/img/splash.png"
+                    "splashScreen": "assets/img/splash.png",
+										"NSAllowsArbitraryLoads":true
                 },
                 "android": {
                     "productName": "Vigour Example",
