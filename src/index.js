@@ -8,14 +8,20 @@ Element.prototype.inject(
   require('element/lib/events/click')
 )
 
+function send (message) {
+  window.NativeInterface.send(JSON.stringify(message))
+}
+
 var show = new Element({
   $text: 'show statusbar',
   $on: {
     $click: function (event) {
       console.log('show clicked')
       status.$text.$val = 'shown'
-      this.$text.$val += '.'
-    // statusBar.set({visibility: true})
+      this.$text.$val += '-'
+      // statusBar.set({visibility: true})
+      send([1, 'statusbar', 'set', {visibility: 'top'}])
+      this.$text.$val += '+'
     }
   }
 })
@@ -26,8 +32,10 @@ var hide = new Element({
     $click: function (event) {
       console.log('hide clicked')
       status.$text.$val = 'hidden'
-      this.$text.$val += '.'
-    // statusBar.set({visibility: false})
+      this.$text.$val += '-'
+      // statusBar.set({visibility: false})
+      send([1, 'statusbar', 'set', {visibility: 'hidden'}])
+      this.$text.$val += '+'
     }
   }
 })
@@ -41,3 +49,5 @@ app.set({
   show: show,
   status: status
 })
+
+window.pluginstatusbar = statusBar
