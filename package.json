@@ -58,7 +58,7 @@
                     "appIndexPath": "build.html",
                     "appIcon": "assets/img/appIcon.png",
                     "splashScreen": "assets/img/splash.png",
-										"NSAllowsArbitraryLoads":true
+                    "NSAllowsArbitraryLoads": true
                 },
                 "android": {
                     "productName": "Vigour Example",
