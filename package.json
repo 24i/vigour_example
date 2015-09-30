@@ -38,7 +38,7 @@
     "element": "git+ssh://git@github.com:vigour-io/element.git#develop",
     "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git",
     "vigour-native-plugintest": "git+ssh://git@github.com:vigour-io/vigour-native-plugintest.git",
-    "vigour-native-statusBar": "git+ssh://git@github.com:vigour-io/vigour-native-statusBar.git"
+    "status-bar": "git+ssh://git@github.com:vigour-io/status-bar.git"
   },
   "devDependencies": {
     "gaston": "^0.14.0",
