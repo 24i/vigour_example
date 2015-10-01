@@ -104,6 +104,7 @@
                     "productName":"Vigour LG Example"
                 },
                 "chromecast": {
+                    "appID":"E57A6AF1"
                 }
             }
         },
