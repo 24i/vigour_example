@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "gaston": "^0.14.0",
-    "vigour-packer-server": "git+ssh://git@github.com:vigour-io/vigour-packer-server.git"
+    "ferry": "git+ssh://git@github.com:vigour-io/ferry.git"
   },
   "vigour": {
     "native": {
