@@ -1,5 +1,5 @@
 require('./global.less')
-// var statusBar = require('vigour-native-statusBar')
+var statusBar = require('status-bar')
 var Element = require('element/lib/element')
 var app = require('element/lib/app')
 
@@ -8,46 +8,67 @@ Element.prototype.inject(
   require('element/lib/events/click')
 )
 
-function send (message) {
-  window.NativeInterface.send(JSON.stringify(message))
-}
+var Title = new Element({
+  node: 'h3'
+}).Constructor
 
-var show = new Element({
-  $text: 'show statusbar',
-  $on: {
-    $click: function (event) {
-      console.log('show clicked')
-      status.$text.$val = 'shown'
-      this.$text.$val += '-'
-      // statusBar.set({visibility: true})
-      send([1, 'statusbar', 'set', {visibility: 'top'}])
-      this.$text.$val += '+'
+var Input = new Element({
+  label: {
+    node: 'label'
+  },
+  input: {
+    node: 'input',
+    on: {
+      keyup: function () {
+        var myPath = this.path.slice(3, -1).join('.')
+        statusBar.setWithPath(myPath, this.node.value)
+      }
     }
+  }
+}).Constructor
+
+var statusBarTester = new Element({
+  title: new Title({
+    text: 'status-bar'
+  }),
+  display: new Input({
+    label: {
+      text: 'display'
+    }
+  }),
+  background: {
+    color: new Input({
+      label: {
+        text: 'background.color'
+      }
+    }),
+    opacity: new Input({
+      label: {
+        text: 'background.opacity'
+      }
+    })
+  },
+  foreground: {
+    color: new Input({
+      label: {
+        text: 'foreground.color'
+      }
+    }),
+    opacity: new Input({
+      label: {
+        text: 'foreground.opacity'
+      }
+    })
   }
 })
 
-var hide = new Element({
-  $text: 'hide statusbar',
-  $on: {
-    $click: function (event) {
-      console.log('hide clicked')
-      status.$text.$val = 'hidden'
-      this.$text.$val += '-'
-      // statusBar.set({visibility: false})
-      send([1, 'statusbar', 'set', {visibility: 'hidden'}])
-      this.$text.$val += '+'
-    }
-  }
-})
-
-var status = new Element({
-  $text: 'idle'
+var pluginTester = new Element({
+  title: new Title({
+    text: 'Plugin tester'
+  }),
+  statusBar: statusBarTester
 })
 
 app.set({
-  hide: hide,
-  show: show,
-  status: status
+  pluginTester: pluginTester
 })
-
-window.pluginstatusbar = statusBar
