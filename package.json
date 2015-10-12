@@ -5,7 +5,7 @@
   "scripts": {
     "start": "gaston",
     "test": "gaston test",
-    "build": "gaston build -s src",
+    "build": "gaston build -s src -o . -i",
     "all": "npm run build; ./node_modules/.bin/vNative build",
     "ios": "npm run build; ./node_modules/.bin/vNative build -p ios",
     "android": "npm run build; ./node_modules/.bin/vNative build -p android",
