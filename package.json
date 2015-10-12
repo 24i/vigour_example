@@ -45,6 +45,15 @@
     "ferry": "git+ssh://git@github.com:vigour-io/ferry.git#develop"
   },
   "vigour": {
+    "wrapper": {
+      "web": "build.html",
+      "assets": {
+        "build.html": true,
+        "build.js": true,
+        "build.css": true,
+        "assets": "*"
+      }
+    },
     "native": {
       "platforms": {
         "ios": {
