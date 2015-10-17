@@ -3,14 +3,7 @@
   "version": "1.0.11",
   "description": "Example vigour app",
   "scripts": {
-    "start": "gaston",
-    "test": "gaston test",
-    "build": "gaston build -s src -o . -i",
-    "all": "npm run build; ./node_modules/.bin/vNative build",
-    "ios": "npm run build; ./node_modules/.bin/vNative build -p ios",
-    "android": "npm run build; ./node_modules/.bin/vNative build -p android",
-    "samsungtv": "npm run build; ./node_modules/.bin/vNative build -p samsungtv",
-    "release": "packer -r -c package.json,.package.json"
+    "build": "gaston build -s src -o . -i"
   },
   "repository": {
     "type": "git",
@@ -35,102 +28,7 @@
   },
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
-    "element": "git+ssh://git@github.com:vigour-io/element.git#develop",
-    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git#develop",
-    "status-bar": "git+ssh://git@github.com:vigour-io/status-bar.git#develop",
-    "env": "git+ssh://git@github.com:vigour-io/env.git#develop",
     "vjs": "git+ssh://git@github.com:vigour-io/vjs.git#develop"
-  },
-  "devDependencies": {
-    "ferry": "git+ssh://git@github.com:vigour-io/ferry.git#develop"
-  },
-  "vigour": {
-    "wrapper": {
-      "web": "build.html",
-      "assets": {
-        "build.html": true,
-        "build.js": true,
-        "build.css": true,
-        "assets": "*"
-      }
-    },
-    "native": {
-      "plugins": ["status-bar", "env", "network"],
-      "platforms": {
-        "ios": {
-          "productName": "Vigour Example",
-          "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.example",
-          "buildNumber": "1",
-          "appIndexPath": "build.html",
-          "appIcon": "assets/img/appIcon.png",
-          "splashScreen": "assets/img/splash.png",
-          "NSAllowsArbitraryLoads": true,
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true,
-            "assets": "*"
-          }
-        },
-        "android": {
-          "productName": "Vigour Example",
-          "applicationId": "io.vigour.example",
-          "appIndexPath": "build.html",
-          "appIcon": "assets/img/appIcon.png",
-          "splashScreen": "assets/img/splash.png",
-          "splashDuration": 1500,
-          "keystoreFile": "example.keystore",
-          "keystorePassword": "shmexample",
-          "keystoreAlias": "blabla",
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true
-          }
-        },
-        "samsungtv": {
-          "productName": "Vigour Samsung Example",
-          "xmlConfig": {
-            "category": "video",
-            "name": "Vigour",
-            "author": "Vigour",
-            "description": "Vigour",
-            "version": "1.0.0",
-            "icons": {
-              "ThumbIcon": "assets/img/appIcon.png",
-              "BigThumbIcon": "assets/img/appIcon.png",
-              "ListIcon": "assets/img/appIcon.png",
-              "BigListIcon": "assets/img/appIcon.png"
-            }
-          },
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true,
-            "assets": "*"
-          }
-        },
-        "lgtv": {
-          "productName": "Vigour LG Example",
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true,
-            "assets": "*"
-          }
-        }
-      }
-    },
-    "packer": {
-      "web": "build.html",
-      "assets": {
-        "build.html": true,
-        "build.js": true,
-        "build.css": true,
-        "assets": "*"
-      }
-    }
   },
   "gaston": {
     "index-path": "src/index.html",
