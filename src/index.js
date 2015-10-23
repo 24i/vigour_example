@@ -1,171 +1,91 @@
+'use strict'
+
 require('./global.less')
+
+var ui = require('uikit')
+var Element = require('element')
+Element.prototype.inject(
+  require('element/lib/property/text')
+)
+
 var statusBar = require('status-bar')
 var env = require('env')
-console.log('env', env)
-var Element = require('element/lib/element')
-
-var Observable = require('vjs/lib/observable')
-Observable.prototype.inject(require('vjs/lib/operator/subscribe'))
 
 var app = new Element({
   node: document.body
 })
 
-Element.prototype.inject(
-  require('element/lib/property/text'),
-  require('element/lib/events/click')
-)
-
-var Header = {}
-
-for (var i = 1; i <= 6; i += 1) {
-  Header[i] = new Element({
-    node: 'h' + i
-  }).Constructor
-}
-
-var Dl = new Element({
-  dl: {
-    node: 'dl',
-    term: {
-      node: 'dt'
-    },
-    definition: {
-      node: 'dd'
-    }
-  }
-}).Constructor
-
-var Input = new Dl({
-  dl: {
-    term: {
-      label: {
-        node: 'label'
-      }
-    },
-    definition: {
-      input: {
-        node: 'input',
-        on: {
-          keyup: function () {
-            var myPath = this.path.slice(3, -1).join('.')
-            statusBar.setWithPath(myPath, this.node.value)
-          }
-        }
-      }
-    }
-  }
-}).Constructor
-
 var envTester = new Element({
-  title: new Header[2]({
+  title: new ui.Header[2]({
     text: 'env'
   }),
-  deviceName: new Dl({
-    dl: {
-      term: {
-        text: 'device.name'
-      },
-      definition: {
-        text: env.device.name
-      }
+  deviceName: new ui.Dl({
+    term: {
+      text: 'device.name'
+    },
+    def: {
+      text: env.device.name
     }
   }),
-  deviceVersion: new Dl({
-    dl: {
-      term: {
-        text: 'device.version'
-      },
-      definition: {
-        text: env.device.version
-      }
+  deviceVersion: new ui.Dl({
+    term: {
+      text: 'device.version'
+    },
+    def: {
+      text: env.device.version
     }
   }),
-  platformName: new Dl({
-    dl: {
-      term: {
-        text: 'platform.name'
-      },
-      definition: {
-        text: env.platform.name
-      }
+  platformName: new ui.Dl({
+    term: {
+      text: 'platform.name'
+    },
+    def: {
+      text: env.platform.name
     }
   }),
-  platformVersion: new Dl({
-    dl: {
-      term: {
-        text: 'platform.version'
-      },
-      definition: {
-        text: env.platform.version
-      }
+  platformVersion: new ui.Dl({
+    term: {
+      text: 'platform.version'
+    },
+    def: {
+      text: env.platform.version
     }
   }),
-  appId: new Dl({
-    dl: {
-      term: {
-        text: 'app.id'
-      },
-      definition: {
-        text: env.app.id
-      }
+  appId: new ui.Dl({
+    term: {
+      text: 'app.id'
+    },
+    def: {
+      text: env.app.id
     }
   })
 })
-
+//
 var statusBarTester = new Element({
-  title: new Header[2]({
+  title: new ui.Header[2]({
     text: 'status-bar'
   }),
-  display: new Input({
-    dl: {
-      term: {
-        label: {
-          text: 'display'
-        }
-      }
+  'display': new ui.Input({
+    input: {
+      text: statusBar.display
     }
   }),
-  backgroundColor: new Input({
-    dl: {
-      term: {
-        label: {
-          text: 'background.color'
-        }
-      }
-    }
+  'background color': new ui.Input({
+    text: 'statusBar.background.color'
   }),
-  backgroundOpacity: new Input({
-    dl: {
-      term: {
-        label: {
-          text: 'background.opacity'
-        }
-      }
-    }
+  'background opacity': new ui.Input({
+    text: 'statusBar.background.opacity'
   }),
-  foregroundColor: new Input({
-    dl: {
-      term: {
-        label: {
-          text: 'foreground.color'
-        }
-      }
-    }
+  'foreground color': new ui.Input({
+    text: 'statusBar.foreground.color'
   }),
-  foregroundOpacity: new Input({
-    dl: {
-      term: {
-        label: {
-          text: 'foreground.opacity'
-        }
-      }
-    }
+  'foreground opacity': new ui.Input({
+    text: 'statusBar.foreground.opacity'
   })
 })
 
 var pluginTester = new Element({
-  title: new Header[1]({
+  title: new ui.Header[1]({
     text: 'Plugin tester'
   }),
   env: envTester,
