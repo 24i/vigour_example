@@ -2,14 +2,14 @@
 
 require('./global.less')
 
-var ui = require('uikit')
-var Element = require('element')
+var ui = require('vigour-uikit')
+var Element = require('vigour-element')
 Element.prototype.inject(
-  require('element/lib/property/text')
+  require('vigour-element/lib/property/text')
 )
 
-var statusBar = require('status-bar')
-var env = require('env')
+var statusBar = require('vigour-status-bar')
+var env = require('vigour-env')
 
 var app = new Element({
   node: document.body
@@ -17,7 +17,7 @@ var app = new Element({
 
 var envTester = new Element({
   title: new ui.Header[2]({
-    text: 'env'
+    text: 'vigour-env'
   }),
   deviceName: new ui.Dl({
     term: {
@@ -63,7 +63,7 @@ var envTester = new Element({
 //
 var statusBarTester = new Element({
   title: new ui.Header[2]({
-    text: 'status-bar'
+    text: 'vigour-status-bar'
   }),
   'display': new ui.Input({
     input: {

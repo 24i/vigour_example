@@ -6,10 +6,10 @@
     "start": "gaston",
     "test": "gaston test",
     "build": "gaston build -s src -o . -i",
-    "all": "npm run build; ./node_modules/.bin/vNative build",
-    "ios": "npm run build; ./node_modules/.bin/vNative build -p ios",
-    "android": "npm run build; ./node_modules/.bin/vNative build -p android",
-    "samsungtv": "npm run build; ./node_modules/.bin/vNative build -p samsungtv",
+    "all": "npm run build && ./node_modules/.bin/vNative build",
+    "ios": "npm run build && ./node_modules/.bin/vNative build -p ios",
+    "android": "npm run build && ./node_modules/.bin/vNative build -p android",
+    "samsungtv": "npm run build && ./node_modules/.bin/vNative build -p samsungtv",
     "release": "packer -r -c package.json,.package.json"
   },
   "repository": {
@@ -21,7 +21,7 @@
     "example"
   ],
   "author": "Vigour",
-  "license": "ISC",
+  "license": "MIT",
   "contributors": [
     "Shawn Inder <shawn@vigour.io>",
     "Alexander Van Der Werff <alex@vigour.io>",
@@ -35,14 +35,14 @@
   },
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
-    "element": "git+ssh://git@github.com:vigour-io/element.git#develop",
-    "vigour-native": "git+ssh://git@github.com:vigour-io/vigour-native.git#develop",
-    "status-bar": "git+ssh://git@github.com:vigour-io/status-bar.git#develop",
-    "env": "git+ssh://git@github.com:vigour-io/env.git#develop",
-    "vjs": "git+ssh://git@github.com:vigour-io/vjs.git#develop"
+    "vigour-element": "0.0.3",
+    "vigour-env": "^1.0.1",
+    "vigour-status-bar": "^1.0.1",
+    "vigour-uikit": "0.0.1",
+    "vigour-wrapper": "0.0.5"
   },
   "devDependencies": {
-    "ferry": "git+ssh://git@github.com:vigour-io/ferry.git#develop"
+    "vigour-ferry": "^2.0.1"
   },
   "vigour": {
     "wrapper": {
@@ -55,7 +55,11 @@
       }
     },
     "native": {
-      "plugins": ["status-bar", "env", "network"],
+      "plugins": [
+        "status-bar",
+        "env",
+        "network"
+      ],
       "platforms": {
         "ios": {
           "productName": "Vigour Example",
