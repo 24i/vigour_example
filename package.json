@@ -35,11 +35,11 @@
   },
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
-    "vigour-element": "0.0.3",
+    "vigour-element": "^0.0.3",
     "vigour-env": "^1.0.1",
     "vigour-status-bar": "^1.0.1",
-    "vigour-uikit": "0.0.1",
-    "vigour-wrapper": "0.0.5"
+    "vigour-uikit": "^0.0.1",
+    "vigour-wrapper": "^0.0.5"
   },
   "devDependencies": {
     "vigour-ferry": "^2.0.1"
