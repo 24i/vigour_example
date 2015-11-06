@@ -10,7 +10,7 @@
     "ios": "npm run build && ./node_modules/.bin/vNative build -p ios",
     "android": "npm run build && ./node_modules/.bin/vNative build -p android",
     "samsungtv": "npm run build && ./node_modules/.bin/vNative build -p samsungtv",
-    "release": "packer -r -c package.json,.package.json"
+    "release": "ferry --release --mergeFiles '[\"/Users/shawn/Work/vigour-example/package.json\",\"/Users/shawn/Work/vigour-example/.package.json\"]'"
   },
   "repository": {
     "type": "git",
@@ -127,7 +127,7 @@
         }
       }
     },
-    "packer": {
+    "ferry": {
       "web": "build.html",
       "assets": {
         "build.html": true,
