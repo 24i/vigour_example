@@ -1,53 +1,97 @@
-require('./global.less')
-// var statusBar = require('vigour-native-statusBar')
-var Element = require('element/lib/element')
-var app = require('element/lib/app')
+'use strict'
 
+require('./global.less')
+
+var ui = require('vigour-uikit')
+var Element = require('vigour-element')
 Element.prototype.inject(
-  require('element/lib/property/text'),
-  require('element/lib/events/click')
+  require('vigour-element/lib/property/text')
 )
 
-function send (message) {
-  window.NativeInterface.send(JSON.stringify(message))
-}
+var statusBar = require('vigour-status-bar')
+var env = require('vigour-env')
 
-var show = new Element({
-  $text: 'show statusbar',
-  $on: {
-    $click: function (event) {
-      console.log('show clicked')
-      status.$text.$val = 'shown'
-      this.$text.$val += '-'
-      // statusBar.set({visibility: true})
-      send([1, 'statusbar', 'set', {visibility: 'top'}])
-      this.$text.$val += '+'
-    }
-  }
+var app = new Element({
+  node: document.body
 })
 
-var hide = new Element({
-  $text: 'hide statusbar',
-  $on: {
-    $click: function (event) {
-      console.log('hide clicked')
-      status.$text.$val = 'hidden'
-      this.$text.$val += '-'
-      // statusBar.set({visibility: false})
-      send([1, 'statusbar', 'set', {visibility: 'hidden'}])
-      this.$text.$val += '+'
+var envTester = new Element({
+  title: new ui.Header[2]({
+    text: 'vigour-env'
+  }),
+  deviceName: new ui.Dl({
+    term: {
+      text: 'device.name'
+    },
+    def: {
+      text: env.device.name
     }
-  }
+  }),
+  deviceVersion: new ui.Dl({
+    term: {
+      text: 'device.version'
+    },
+    def: {
+      text: env.device.version
+    }
+  }),
+  platformName: new ui.Dl({
+    term: {
+      text: 'platform.name'
+    },
+    def: {
+      text: env.platform.name
+    }
+  }),
+  platformVersion: new ui.Dl({
+    term: {
+      text: 'platform.version'
+    },
+    def: {
+      text: env.platform.version
+    }
+  }),
+  appId: new ui.Dl({
+    term: {
+      text: 'app.id'
+    },
+    def: {
+      text: env.app.id
+    }
+  })
+})
+//
+var statusBarTester = new Element({
+  title: new ui.Header[2]({
+    text: 'vigour-status-bar'
+  }),
+  'display': new ui.Input({
+    input: {
+      text: statusBar.display
+    }
+  }),
+  'background color': new ui.Input({
+    text: 'statusBar.background.color'
+  }),
+  'background opacity': new ui.Input({
+    text: 'statusBar.background.opacity'
+  }),
+  'foreground color': new ui.Input({
+    text: 'statusBar.foreground.color'
+  }),
+  'foreground opacity': new ui.Input({
+    text: 'statusBar.foreground.opacity'
+  })
 })
 
-var status = new Element({
-  $text: 'idle'
+var pluginTester = new Element({
+  title: new ui.Header[1]({
+    text: 'Plugin tester'
+  }),
+  env: envTester,
+  statusBar: statusBarTester
 })
 
 app.set({
-  hide: hide,
-  show: show,
-  status: status
+  pluginTester: pluginTester
 })
-
-window.pluginstatusbar = statusBar
