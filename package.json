@@ -73,7 +73,7 @@
 					"interfaceOrientations": {
 						"iPhone":["Portrait"],
 						"iPad":["Portrait", "LandscapeLeft", "UpsideDown", "LandscapeRight"]
-					}
+					},
           "assets": {
             "build.html": true,
             "build.js": true,
