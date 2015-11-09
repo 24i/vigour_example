@@ -39,7 +39,7 @@
     "vigour-env": "^1.0.1",
     "vigour-status-bar": "^1.0.1",
     "vigour-uikit": "^0.0.1",
-    "vigour-wrapper": "^0.0.5"
+    "vigour-wrapper": "^1.0.0"
   },
   "devDependencies": {
     "vigour-ferry": "^2.0.1"
