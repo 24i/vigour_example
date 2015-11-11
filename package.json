@@ -10,6 +10,8 @@
     "ios": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"ios\"}'",
     "android": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"android\"}'",
     "samsungtv": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"samsungtv\"}'",
+    "webostv": "npm run build && ./node_modules/.bin/vNative build -native '{\"selectedPlatforms\":\"webostv\"}'",
+    "chromecastweb": "npm run build && ./node_modules/.bin/vNative build -native '{\"selectedPlatforms\":\"chromecastweb\"}'",
     "release": "ferry --release --mergeFiles '[\"/Users/shawn/Work/vigour-example/package.json\",\"/Users/shawn/Work/vigour-example/.package.json\"]'"
   },
   "repository": {
@@ -116,8 +118,9 @@
             "assets": "*"
           }
         },
-        "lgtv": {
+        "webostv": {
           "productName": "Vigour LG Example",
+          "appinfo":"teste",
           "assets": {
             "build.html": true,
             "build.js": true,
