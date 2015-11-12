@@ -120,7 +120,10 @@
         },
         "webostv": {
           "productName": "Vigour LG Example",
-          "appinfo":"teste",
+          "appinfo":{
+            "domain":"com.vigour1.io",  
+            "name":"Vigour Example new build"
+          },
           "assets": {
             "build.html": true,
             "build.js": true,
