@@ -7,9 +7,9 @@
     "test": "gaston test",
     "build": "gaston build -s src -o . -i",
     "all": "npm run build && ./node_modules/.bin/vNative build",
-    "ios": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"ios\"}'",
-    "android": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"android\"}'",
-    "samsungtv": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"samsungtv\"}'",
+    "ios": "npm run build && ./node_modules/.bin/vNative build --native.selectedPlatforms ios --mergeFiles ./package.json",
+    "android": "npm run build && ./node_modules/.bin/vNative build --native.selectedPlatforms android --mergeFiles ./package.json",
+    "samsungtv": "npm run build && ./node_modules/.bin/vNative build --native.selectedPlatforms samsungtv --mergeFiles ./package.json",
     "release": "ferry --release --mergeFiles '[\"/Users/shawn/Work/vigour-example/package.json\",\"/Users/shawn/Work/vigour-example/.package.json\"]'"
   },
   "repository": {
