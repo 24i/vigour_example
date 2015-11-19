@@ -1,6 +1,6 @@
 {
   "name": "vigour-example",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "Example vigour app",
   "scripts": {
     "start": "gaston",
@@ -39,9 +39,9 @@
   "dependencies": {
     "vigour-element": "^0.0.3",
     "vigour-env": "^1.0.1",
-    "vigour-status-bar": "^1.0.1",
+    "vigour-status-bar": "^1.0.4",
     "vigour-uikit": "^0.0.1",
-    "vigour-wrapper": "^1.0.0"
+    "vigour-wrapper": "^2.0.0"
   },
   "devDependencies": {
     "vigour-ferry": "^2.0.1"
