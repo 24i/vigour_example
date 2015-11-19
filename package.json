@@ -11,6 +11,7 @@
     "android": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"android\"}'",
     "samsungtv": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"samsungtv\"}'",
     "webostv": "npm run build && ./node_modules/.bin/vNative build -native '{\"selectedPlatforms\":\"webostv\"}'",
+    "netcasttv": "npm run build && ./node_modules/.bin/vNative build -native '{\"selectedPlatforms\":\"netcasttv\"}'",
     "chromecastweb": "npm run build && ./node_modules/.bin/vNative build -native '{\"selectedPlatforms\":\"chromecastweb\"}'",
     "release": "ferry --release --mergeFiles '[\"/Users/shawn/Work/vigour-example/package.json\",\"/Users/shawn/Work/vigour-example/.package.json\"]'"
   },
@@ -118,10 +119,21 @@
             "assets": "*"
           }
         },
+        "chromecastweb":{
+
+        },
+        "netcasttv":{
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true,
+            "assets": "*"
+          }
+        },
         "webostv": {
           "productName": "Vigour LG Example",
           "appinfo":{
-            "domain":"com.vigour1.io",  
+            "domain":"com.vigour12.io",  
             "name":"Vigour Example new build"
           },
           "assets": {
