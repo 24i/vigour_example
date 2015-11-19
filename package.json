@@ -6,10 +6,10 @@
     "start": "gaston",
     "test": "gaston test",
     "build": "gaston build -s src -o . -i",
-    "all": "npm run build && ./node_modules/.bin/vNative build",
-    "ios": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"ios\"}'",
-    "android": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"android\"}'",
-    "samsungtv": "npm run build && ./node_modules/.bin/vNative build --native '{\"selectedPlatforms\":\"samsungtv\"}'",
+    "all": "npm run build && ./node_modules/.bin/wrapper build",
+    "ios": "npm run build && ./node_modules/.bin/wrapper build --native '{\"selectedPlatforms\":\"ios\"}'",
+    "android": "npm run build && ./node_modules/.bin/wrapper build --native '{\"selectedPlatforms\":\"android\"}'",
+    "samsungtv": "npm run build && ./node_modules/.bin/wrapper build --native '{\"selectedPlatforms\":\"samsungtv\"}'",
     "release": "ferry --release --mergeFiles '[\"/Users/shawn/Work/vigour-example/package.json\",\"/Users/shawn/Work/vigour-example/.package.json\"]'"
   },
   "repository": {
@@ -39,7 +39,7 @@
     "vigour-env": "^1.0.1",
     "vigour-status-bar": "^1.0.1",
     "vigour-uikit": "^0.0.1",
-    "vigour-wrapper": "^1.0.0"
+    "vigour-wrapper": "^2.0.0"
   },
   "devDependencies": {
     "vigour-ferry": "^2.0.1"
