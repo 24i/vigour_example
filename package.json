@@ -3,17 +3,17 @@
   "version": "1.0.15",
   "description": "Example vigour app",
   "scripts": {
-    "start": "gaston",
     "test": "gaston test",
     "build": "gaston build -s src -o . -i",
     "all": "npm run build && ./node_modules/.bin/wrapper build",
+    "web": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms web",
     "ios": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
     "android": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
     "samsungtv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms samsungtv",
     "webostv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
     "netcasttv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
     "chromecastweb": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
-    "release": "ferry --release --mergeFiles '[\"/Users/shawn/Work/vigour-example/package.json\",\"/Users/shawn/Work/vigour-example/.package.json\"]'"
+    "release": "ferry --release --mergeFiles '[\"./package.json\",\"./.package.json\"]'"
   },
   "repository": {
     "type": "git",
@@ -41,10 +41,10 @@
     "vigour-element": "^0.0.3",
     "vigour-env": "^1.0.1",
     "vigour-status-bar": "^1.0.4",
-    "vigour-uikit": "^0.0.1",
-    "vigour-wrapper": "^2.0.0"
+    "vigour-uikit": "^0.0.1"
   },
   "devDependencies": {
+    "vigour-wrapper": "^2.0.0",
     "vigour-ferry": "^3.0.0"
   },
   "vigour": {
@@ -58,12 +58,15 @@
       }
     },
     "native": {
-      "plugins": [
-        "status-bar",
-        "env",
-        "network"
-      ],
       "platforms": {
+        "web": {
+          "appIndexPath": "build.html",
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true
+          }
+        },
         "ios": {
           "productName": "Vigour Example",
           "organizationName": "Vigour",
@@ -73,11 +76,14 @@
           "appIcon": "assets/img/appIcon.png",
           "splashScreen": "assets/img/splash.png",
           "NSAllowsArbitraryLoads": true,
+          "interfaceOrientations": {
+            "iPhone":["Portrait"],
+            "iPad":["Portrait", "LandscapeLeft", "UpsideDown", "LandscapeRight"]
+          },
           "assets": {
             "build.html": true,
             "build.js": true,
-            "build.css": true,
-            "assets": "*"
+            "build.css": true
           }
         },
         "android": {
@@ -93,8 +99,7 @@
           "assets": {
             "build.html": true,
             "build.js": true,
-            "build.css": true,
-            "assets": "*"
+            "build.css": true
           }
         },
         "samsungtv": {
@@ -115,17 +120,17 @@
           "assets": {
             "build.html": true,
             "build.js": true,
-            "build.css": true,
-            "assets": "*"
+            "build.css": true
           }
         },
-        "chromecastweb": {},
+        "chromecastweb": {
+
+        },
         "netcasttv": {
           "assets": {
             "build.html": true,
             "build.js": true,
-            "build.css": true,
-            "assets": "*"
+            "build.css": true
           }
         },
         "webostv": {
@@ -148,8 +153,7 @@
       "assets": {
         "build.html": true,
         "build.js": true,
-        "build.css": true,
-        "assets": "*"
+        "build.css": true
       }
     }
   },
