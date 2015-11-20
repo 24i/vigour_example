@@ -1,6 +1,6 @@
 {
   "name": "vigour-example",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Example vigour app",
   "scripts": {
     "start": "gaston",
@@ -119,10 +119,8 @@
             "assets": "*"
           }
         },
-        "chromecastweb":{
-
-        },
-        "netcasttv":{
+        "chromecastweb": {},
+        "netcasttv": {
           "assets": {
             "build.html": true,
             "build.js": true,
@@ -132,9 +130,9 @@
         },
         "webostv": {
           "productName": "Vigour LG Example",
-          "appinfo":{
-            "domain":"com.vigour12.io",
-            "name":"Vigour Example new build"
+          "appinfo": {
+            "domain": "com.vigour12.io",
+            "name": "Vigour Example new build"
           },
           "assets": {
             "build.html": true,
