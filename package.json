@@ -1,6 +1,6 @@
 {
   "name": "vigour-example",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Example vigour app",
   "scripts": {
     "test": "gaston test",
@@ -77,8 +77,15 @@
           "splashScreen": "assets/img/splash.png",
           "NSAllowsArbitraryLoads": true,
           "interfaceOrientations": {
-            "iPhone":["Portrait"],
-            "iPad":["Portrait", "LandscapeLeft", "UpsideDown", "LandscapeRight"]
+            "iPhone": [
+              "Portrait"
+            ],
+            "iPad": [
+              "Portrait",
+              "LandscapeLeft",
+              "UpsideDown",
+              "LandscapeRight"
+            ]
           },
           "assets": {
             "build.html": true,
@@ -123,9 +130,7 @@
             "build.css": true
           }
         },
-        "chromecastweb": {
-
-        },
+        "chromecastweb": {},
         "netcasttv": {
           "assets": {
             "build.html": true,
