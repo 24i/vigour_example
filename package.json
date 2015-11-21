@@ -1,16 +1,19 @@
 {
   "name": "vigour-example",
-  "version": "1.0.12",
+  "version": "1.0.16",
   "description": "Example vigour app",
   "scripts": {
-    "start": "gaston",
     "test": "gaston test",
     "build": "gaston build -s src -o . -i",
-    "all": "npm run build && ./node_modules/.bin/vNative build",
-    "ios": "npm run build && ./node_modules/.bin/vNative build --native.selectedPlatforms ios --mergeFiles ./package.json",
-    "android": "npm run build && ./node_modules/.bin/vNative build --native.selectedPlatforms android --mergeFiles ./package.json",
-    "samsungtv": "npm run build && ./node_modules/.bin/vNative build --native.selectedPlatforms samsungtv --mergeFiles ./package.json",
-    "release": "ferry --release --mergeFiles '[\"/Users/shawn/Work/vigour-example/package.json\",\"/Users/shawn/Work/vigour-example/.package.json\"]'"
+    "all": "npm run build && ./node_modules/.bin/wrapper build",
+    "web": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms web",
+    "ios": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
+    "android": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
+    "samsungtv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms samsungtv",
+    "webostv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
+    "netcasttv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
+    "chromecastweb": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
+    "release": "ferry --release --mergeFiles '[\"./package.json\",\"./.package.json\"]'"
   },
   "repository": {
     "type": "git",
@@ -37,12 +40,12 @@
   "dependencies": {
     "vigour-element": "^0.0.3",
     "vigour-env": "^1.0.1",
-    "vigour-status-bar": "^1.0.1",
-    "vigour-uikit": "^0.0.1",
-    "vigour-wrapper": "^1.0.0"
+    "vigour-status-bar": "^1.0.4",
+    "vigour-uikit": "^0.0.1"
   },
   "devDependencies": {
-    "vigour-ferry": "^2.0.1"
+    "vigour-wrapper": "^2.0.0",
+    "vigour-ferry": "^3.0.0"
   },
   "vigour": {
     "wrapper": {
@@ -55,12 +58,15 @@
       }
     },
     "native": {
-      "plugins": [
-        "status-bar",
-        "env",
-        "network"
-      ],
       "platforms": {
+        "web": {
+          "appIndexPath": "build.html",
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true
+          }
+        },
         "ios": {
           "productName": "Vigour Example",
           "organizationName": "Vigour",
@@ -70,16 +76,26 @@
           "appIcon": "assets/img/appIcon.png",
           "splashScreen": "assets/img/splash.png",
           "NSAllowsArbitraryLoads": true,
+          "interfaceOrientations": {
+            "iPhone": [
+              "Portrait"
+            ],
+            "iPad": [
+              "Portrait",
+              "LandscapeLeft",
+              "UpsideDown",
+              "LandscapeRight"
+            ]
+          },
           "assets": {
             "build.html": true,
             "build.js": true,
-            "build.css": true,
-            "assets": "*"
+            "build.css": true
           }
         },
         "android": {
           "productName": "Vigour Example",
-          "applicationId": "io.vigour.example",
+          "applicationId": "io.vigour.test",
           "appIndexPath": "build.html",
           "appIcon": "assets/img/appIcon.png",
           "splashScreen": "assets/img/splash.png",
@@ -87,11 +103,14 @@
           "keystoreFile": "example.keystore",
           "keystorePassword": "shmexample",
           "keystoreAlias": "blabla",
+          "run": true,
+          "debug": true,
+          "version": "2.5",
+          "versionCode": 36,
           "assets": {
             "build.html": true,
             "build.js": true,
-            "build.css": true,
-            "assets": "*"
+            "build.css": true
           }
         },
         "samsungtv": {
@@ -112,12 +131,23 @@
           "assets": {
             "build.html": true,
             "build.js": true,
-            "build.css": true,
-            "assets": "*"
+            "build.css": true
           }
         },
-        "lgtv": {
+        "chromecastweb": {},
+        "netcasttv": {
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true
+          }
+        },
+        "webostv": {
           "productName": "Vigour LG Example",
+          "appinfo": {
+            "domain": "com.vigour12.io",
+            "name": "Vigour Example new build"
+          },
           "assets": {
             "build.html": true,
             "build.js": true,
@@ -132,8 +162,7 @@
       "assets": {
         "build.html": true,
         "build.js": true,
-        "build.css": true,
-        "assets": "*"
+        "build.css": true
       }
     }
   },
