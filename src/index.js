@@ -2,8 +2,9 @@
 
 require('./global.less')
 
-var ui = require('vigour-uikit')
 var Element = require('vigour-element')
+var ui = require('vigour-uikit')
+
 Element.prototype.inject(
   require('vigour-element/lib/property/text')
 )
@@ -16,10 +17,8 @@ var app = new Element({
 })
 
 var envTester = new Element({
-  title: new ui.Header[2]({
-    text: 'vigour-env'
-  }),
-  deviceName: new ui.Dl({
+  title: new ui.H2('vigour-env'),
+  deviceName: new ui.Button({
     term: {
       text: 'device.name'
     },
@@ -27,7 +26,7 @@ var envTester = new Element({
       text: env.device.name
     }
   }),
-  deviceVersion: new ui.Dl({
+  deviceVersion: new ui.Button({
     term: {
       text: 'device.version'
     },
@@ -35,7 +34,7 @@ var envTester = new Element({
       text: env.device.version
     }
   }),
-  platformName: new ui.Dl({
+  platformName: new ui.Button({
     term: {
       text: 'platform.name'
     },
@@ -43,7 +42,7 @@ var envTester = new Element({
       text: env.platform.name
     }
   }),
-  platformVersion: new ui.Dl({
+  platformVersion: new ui.Button({
     term: {
       text: 'platform.version'
     },
@@ -51,7 +50,7 @@ var envTester = new Element({
       text: env.platform.version
     }
   }),
-  appId: new ui.Dl({
+  appId: new ui.Button({
     term: {
       text: 'app.id'
     },
@@ -62,9 +61,7 @@ var envTester = new Element({
 })
 //
 var statusBarTester = new Element({
-  title: new ui.Header[2]({
-    text: 'vigour-status-bar'
-  }),
+  title: new ui.H2('vigour-status-bar'),
   'display': new ui.Input({
     input: {
       text: statusBar.display
@@ -85,9 +82,7 @@ var statusBarTester = new Element({
 })
 
 var pluginTester = new Element({
-  title: new ui.Header[1]({
-    text: 'Plugin tester'
-  }),
+  title: new ui.H2('Plugin tester'),
   env: envTester,
   statusBar: statusBarTester
 })

@@ -38,128 +38,18 @@
   },
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
-    "vigour-element": "^0.2.1",
-    "vigour-env": "^1.0.4",
-    "vigour-status-bar": "^1.0.6",
-    "vigour-uikit": "^0.2.0"
+    "vigour-element": "~0.2.1",
+    "vigour-env": "~1.0.4",
+    "vigour-status-bar": "~1.0.6",
+    "vigour-uikit": "~0.3.1"
   },
   "devDependencies": {
     "vigour-wrapper": "^2.1.4",
     "vigour-ferry": "^3.0.1"
   },
-  "vigour": {
-    "wrapper": {
-      "web": "build.html",
-      "assets": {
-        "build.html": true,
-        "build.js": true,
-        "build.css": true,
-        "assets": "*"
-      }
-    },
-    "native": {
-      "platforms": {
-        "web": {
-          "appIndexPath": "build.html",
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true
-          }
-        },
-        "ios": {
-          "productName": "Vigour Example",
-          "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.example",
-          "buildNumber": "1",
-          "appIndexPath": "build.html",
-          "appIcon": "assets/img/appIcon.png",
-          "splashScreen": "assets/img/splash.png",
-          "NSAllowsArbitraryLoads": true,
-          "interfaceOrientations": {
-            "iPhone": [
-              "Portrait"
-            ],
-            "iPad": [
-              "Portrait",
-              "LandscapeLeft",
-              "UpsideDown",
-              "LandscapeRight"
-            ]
-          },
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true
-          }
-        },
-        "android": {
-          "productName": "Vigour Example",
-          "applicationId": "io.vigour.example",
-          "appIndexPath": "build.html",
-          "appIcon": "assets/img/appIcon.png",
-          "splashScreen": "assets/img/splash.png",
-          "splashDuration": 1500,
-          "keystoreFile": "example.keystore",
-          "keystorePassword": "shmexample",
-          "keystoreAlias": "blabla",
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true
-          }
-        },
-        "samsungtv": {
-          "productName": "Vigour Samsung Example",
-          "xmlConfig": {
-            "category": "video",
-            "name": "Vigour",
-            "author": "Vigour",
-            "description": "Vigour",
-            "version": "1.0.0",
-            "icons": {
-              "ThumbIcon": "assets/img/appIcon.png",
-              "BigThumbIcon": "assets/img/appIcon.png",
-              "ListIcon": "assets/img/appIcon.png",
-              "BigListIcon": "assets/img/appIcon.png"
-            }
-          },
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true
-          }
-        },
-        "chromecastweb": {},
-        "netcasttv": {
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true
-          }
-        },
-        "webostv": {
-          "productName": "Vigour LG Example",
-          "appinfo": {
-            "domain": "com.vigour12.io",
-            "name": "Vigour Example new build"
-          },
-          "assets": {
-            "build.html": true,
-            "build.js": true,
-            "build.css": true,
-            "assets": "*"
-          }
-        }
-      }
-    },
-    "ferry": {
-      "web": "build.html",
-      "assets": {
-        "build.html": true,
-        "build.js": true,
-        "build.css": true
-      }
+  "gaston": {
+    "aliasify": {
+      "uikit": "./node_modules/vigour-uikit"
     }
   }
 }
