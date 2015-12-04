@@ -38,14 +38,14 @@
   },
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
-    "vigour-element": "^0.0.3",
-    "vigour-env": "^1.0.1",
-    "vigour-status-bar": "^1.0.4",
-    "vigour-uikit": "^0.0.1"
+    "vigour-element": "^0.2.1",
+    "vigour-env": "^1.0.4",
+    "vigour-status-bar": "^1.0.6",
+    "vigour-uikit": "^0.2.0"
   },
   "devDependencies": {
-    "vigour-wrapper": "^2.0.0",
-    "vigour-ferry": "^3.0.0"
+    "vigour-wrapper": "^2.1.4",
+    "vigour-ferry": "^3.0.1"
   },
   "vigour": {
     "wrapper": {
@@ -161,10 +161,5 @@
         "build.css": true
       }
     }
-  },
-  "gaston": {
-    "index-path": "src/index.html",
-    "source-maps": false,
-    "require-paths": {}
   }
 }
