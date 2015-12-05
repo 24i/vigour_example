@@ -39,8 +39,8 @@
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
     "vigour-element": "~0.2.1",
-    "vigour-status-bar": "~1.0.6",
-    "vigour-uikit": "~0.3.1"
+    "vigour-uikit": "~0.3.1",
+    "vigour-status-bar": "^1.0.8"
   },
   "devDependencies": {
     "vigour-wrapper": "^2.2.1",
