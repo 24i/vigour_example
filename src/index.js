@@ -10,55 +10,55 @@ Element.prototype.inject(
 )
 
 var statusBar = require('vigour-status-bar')
-var env = require('vigour-env')
+// var env = require('vigour-env')
 
 var app = new Element({
   node: document.body
 })
 
-var envTester = new Element({
-  title: new ui.H2('vigour-env'),
-  deviceName: new ui.Button({
-    term: {
-      text: 'device.name'
-    },
-    def: {
-      text: env.device.name
-    }
-  }),
-  deviceVersion: new ui.Button({
-    term: {
-      text: 'device.version'
-    },
-    def: {
-      text: env.device.version
-    }
-  }),
-  platformName: new ui.Button({
-    term: {
-      text: 'platform.name'
-    },
-    def: {
-      text: env.platform.name
-    }
-  }),
-  platformVersion: new ui.Button({
-    term: {
-      text: 'platform.version'
-    },
-    def: {
-      text: env.platform.version
-    }
-  }),
-  appId: new ui.Button({
-    term: {
-      text: 'app.id'
-    },
-    def: {
-      text: env.app.id
-    }
-  })
-})
+// var envTester = new Element({
+//   title: new ui.H2('vigour-env'),
+//   deviceName: new ui.Button({
+//     term: {
+//       text: 'device.name'
+//     },
+//     def: {
+//       text: env.device.name
+//     }
+//   }),
+//   deviceVersion: new ui.Button({
+//     term: {
+//       text: 'device.version'
+//     },
+//     def: {
+//       text: env.device.version
+//     }
+//   }),
+//   platformName: new ui.Button({
+//     term: {
+//       text: 'platform.name'
+//     },
+//     def: {
+//       text: env.platform.name
+//     }
+//   }),
+//   platformVersion: new ui.Button({
+//     term: {
+//       text: 'platform.version'
+//     },
+//     def: {
+//       text: env.platform.version
+//     }
+//   }),
+//   appId: new ui.Button({
+//     term: {
+//       text: 'app.id'
+//     },
+//     def: {
+//       text: env.app.id
+//     }
+//   })
+// })
 //
 var statusBarTester = new Element({
   title: new ui.H2('vigour-status-bar'),
@@ -83,7 +83,7 @@ var statusBarTester = new Element({
 
 var pluginTester = new Element({
   title: new ui.H2('Plugin tester'),
-  env: envTester,
+  // env: envTester,
   statusBar: statusBarTester
 })
 
