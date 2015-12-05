@@ -6,7 +6,7 @@
     "test": "gaston test",
     "build": "gaston build -s src -o . -i",
     "all": "npm run build && ./node_modules/.bin/wrapper build",
-    "web": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms web",
+    "web": "./node_modules/.bin/wrapper build --native.selectedPlatforms web",
     "ios": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
     "android": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
     "samsungtv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms samsungtv",
@@ -39,17 +39,31 @@
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
     "vigour-element": "~0.2.1",
-    "vigour-env": "~1.0.4",
     "vigour-status-bar": "~1.0.6",
     "vigour-uikit": "~0.3.1"
   },
   "devDependencies": {
-    "vigour-wrapper": "^2.1.4",
+    "vigour-wrapper": "^2.2.1",
     "vigour-ferry": "^3.0.1"
   },
   "gaston": {
     "aliasify": {
       "uikit": "./node_modules/vigour-uikit"
+    }
+  },
+  "vigour": {
+    "native": {
+      "platforms": {
+        "web": {
+          "productName": "Vigourous example",
+          "appIndexPath": "build.html",
+          "assets": {
+            "build.html": true,
+            "build.css": true,
+            "build.js": true
+          }
+        }
+      }
     }
   }
 }
