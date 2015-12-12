@@ -9,7 +9,7 @@ Element.prototype.inject(
   require('vigour-element/lib/property/text')
 )
 
-var statusBar = require('vigour-status-bar')
+var statusBar = require('vigour-statusbar')
 // var env = require('vigour-env')
 
 var app = new Element({
@@ -61,7 +61,7 @@ var app = new Element({
 // })
 //
 var statusBarTester = new Element({
-  title: new ui.H2('vigour-status-bar'),
+  title: new ui.H2('vigour-statusbar'),
   'display': new ui.Input({
     input: {
       text: statusBar.display
