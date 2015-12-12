@@ -47,6 +47,7 @@
     "vigour-ferry": "^3.0.1"
   },
   "gaston": {
+    "package": true,
     "aliasify": {
       "uikit": "./node_modules/vigour-uikit"
     }
@@ -61,6 +62,32 @@
             "build.html": true,
             "build.css": true,
             "build.js": true
+          }
+        },
+        "ios": {
+          "productName": "Vigourous example",
+          "organizationName": "Vigour",
+          "organizationIdentifier": "io.vigour.ex",
+          "buildNumber": "1",
+          "appIndexPath": "build.html",
+          "appUrlIdentifier": "io.vigour.example",
+          "appUrlScheme": "cc",
+          "appIcon": "assets/img/appIcon.png",
+          "splashScreen": "assets/img/splash.png",
+          "interfaceOrientations": {
+            "iPhone": [
+              "Portrait"
+            ],
+            "iPad": [
+              "LandscapeLeft",
+              "LandscapeRight"
+            ]
+          },
+          "assets": {
+            "build.js": true,
+            "build.css": true,
+            "assets": "*",
+            "build.html": true
           }
         }
       }
