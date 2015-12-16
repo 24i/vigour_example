@@ -3,6 +3,7 @@ bundles/
 bundle.*
 build.*
 build/
+dist/
 .package.json
 
 *.log
