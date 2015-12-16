@@ -4,16 +4,18 @@
   "description": "Example vigour app",
   "scripts": {
     "test": "gaston test",
-    "build": "gaston build -s src -o . -i",
-    "all": "npm run build && ./node_modules/.bin/wrapper build",
+    "prebuild": "gaston build -s src -o . -i",
+    "build": "npm run prebuild && ./node_modules/.bin/wrapper build --native.builds false",
+    "all": "npm run build",
     "web": "./node_modules/.bin/wrapper build --native.selectedPlatforms web",
-    "ios": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
-    "android": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
-    "samsungtv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms samsungtv",
-    "webostv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
-    "netcasttv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
-    "chromecastweb": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
-    "release": "ferry --release --mergeFiles '[\"./package.json\",\"./.package.json\"]'"
+    "ios": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
+    "android": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
+    "samsungtv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms samsungtv",
+    "webostv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
+    "netcasttv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
+    "chromecastweb": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
+    "release": "ferry --release --mergeFiles '[\"./package.json\",\"./.package.json\"]'",
+    "dist": "gaston dist"
   },
   "repository": {
     "type": "git",
@@ -50,6 +52,12 @@
     "package": true,
     "aliasify": {
       "uikit": "./node_modules/vigour-uikit"
+    },
+    "dist": {
+      "files": [
+        "build/web/**/*.*",
+        "build/ios/vigour-native/www/**/*.*"
+      ]
     }
   },
   "vigour": {
@@ -65,6 +73,7 @@
           }
         },
         "ios": {
+          "location": "http://192.168.2.23:9090/",
           "productName": "Vigourous example",
           "organizationName": "Vigour",
           "organizationIdentifier": "io.vigour.ex",
