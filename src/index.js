@@ -2,19 +2,15 @@
 
 require('./global.less')
 
-var Element = require('vigour-element')
-var ui = require('vigour-uikit')
-
-Element.prototype.inject(
-  require('vigour-element/lib/property/text')
-)
-
-var statusBar = require('vigour-statusbar')
-// var env = require('vigour-env')
-
-var app = new Element({
+var App = require('vigour-element/lib/app')
+var app = new App({
   node: document.body
 })
+// var Element = require('vigour-element')
+var ui = require('vigour-uikit')
+
+// var statusBar = require('vigour-statusbar')
+// var env = require('vigour-env')
 
 // var envTester = new Element({
 //   title: new ui.H2('vigour-env'),
@@ -60,33 +56,32 @@ var app = new Element({
 //   })
 // })
 //
-var statusBarTester = new Element({
-  title: new ui.H2('vigour-statusbar'),
-  'display': new ui.Input({
-    input: {
-      text: statusBar.display
-    }
-  }),
-  'background color': new ui.Input({
-    text: 'statusBar.background.color'
-  }),
-  'background opacity': new ui.Input({
-    text: 'statusBar.background.opacity'
-  }),
-  'foreground color': new ui.Input({
-    text: 'statusBar.foreground.color'
-  }),
-  'foreground opacity': new ui.Input({
-    text: 'statusBar.foreground.opacity'
-  })
-})
+// var statusBarTester = new Element({
+//   title: new ui.H2('vigour-statusbar'),
+//   'display': new ui.Input({
+//     text: statusBar.display
+//   }),
+//   'background color': new ui.Input({
+//     text: 'statusBar.background.color'
+//   }),
+//   'background opacity': new ui.Input({
+//     text: 'statusBar.background.opacity'
+//   }),
+//   'foreground color': new ui.Input({
+//     text: 'statusBar.foreground.color'
+//   }),
+//   'foreground opacity': new ui.Input({
+//     text: 'statusBar.foreground.opacity'
+//   })
+// })
 
-var pluginTester = new Element({
-  title: new ui.H2('Plugin tester'),
-  // env: envTester,
-  statusBar: statusBarTester
-})
+// var pluginTester = new Element({
+//   title: new ui.H2('Plugin tester'),
+//   env: envTester,
+//   statusBar: statusBarTester
+// })
 
 app.set({
-  pluginTester: pluginTester
+  banner: new ui.H1('Vigourous Example App!')
+  // pluginTester: pluginTester
 })
