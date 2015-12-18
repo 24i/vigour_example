@@ -1,6 +1,6 @@
 {
   "name": "vigour-example",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Example vigour app",
   "scripts": {
     "test": "gaston test",
@@ -57,12 +57,16 @@
       "web": {
         "appcache": true,
         "root": "build/web",
-        "files": ["**/*.*"]
+        "files": [
+          "**/*.*"
+        ]
       },
       "ios": {
         "appcache": true,
         "root": "build/ios/vigour-native/www",
-        "files": ["**/*.*"]
+        "files": [
+          "**/*.*"
+        ]
       }
     }
   },
