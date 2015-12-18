@@ -54,10 +54,16 @@
       "uikit": "./node_modules/vigour-uikit"
     },
     "dist": {
-      "files": [
-        "build/web/**/*.*",
-        "build/ios/vigour-native/www/**/*.*"
-      ]
+      "web": {
+        "appcache": true,
+        "root": "build/web",
+        "files": ["**/*.*"]
+      },
+      "ios": {
+        "appcache": true,
+        "root": "build/ios/vigour-native/www",
+        "files": ["**/*.*"]
+      }
     }
   },
   "vigour": {
