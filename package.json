@@ -74,6 +74,7 @@
     "native": {
       "platforms": {
         "web": {
+          "location": "http://192.168.2.23:9090/",
           "productName": "Vigourous example",
           "appIndexPath": "build.html",
           "assets": {
@@ -105,7 +106,23 @@
           "assets": {
             "build.js": true,
             "build.css": true,
-            "assets": "*",
+            "build.html": true
+          }
+        },
+        "android": {
+          "location": "http://192.168.2.23:9090/",
+          "productName": "Vigourous example",
+          "applicationId": "io.vigour.vigourexample",
+          "appIndexPath": "index.html",
+          "appIcon": "assets/img/appIcon.png",
+          "splashScreen": "assets/img/splash.png",
+          "splashDuration": 1500,
+          "keystoreFile": "example.keystore",
+          "keystorePassword": "shmexample",
+          "keystoreAlias": "blabla",
+          "assets": {
+            "build.js":true,
+            "build.css": true,
             "build.html": true
           }
         }
