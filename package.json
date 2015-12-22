@@ -14,7 +14,6 @@
     "webostv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
     "netcasttv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
     "chromecastweb": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
-    "release": "ferry --release --mergeFiles '[\"./package.json\",\"./.package.json\"]'",
     "dist": "gaston dist"
   },
   "repository": {
@@ -45,7 +44,7 @@
     "vigour-uikit": "~0.3.1"
   },
   "devDependencies": {
-    "vigour-wrapper": "^2.2.1",
+    "vigour-wrapper": "^2.2.6",
     "vigour-ferry": "^3.0.1"
   },
   "gaston": {
@@ -81,7 +80,7 @@
     "native": {
       "platforms": {
         "web": {
-          "location": "http://192.168.2.23:9090/",
+          "location": "http://localhost:9090/",
           "productName": "Vigourous example",
           "appIndexPath": "build.html",
           "assets": {
@@ -91,7 +90,7 @@
           }
         },
         "ios": {
-          "location": "http://192.168.2.23:9090/",
+          "location": "http://localhost:9090/",
           "productName": "Vigourous example",
           "organizationName": "Vigour",
           "organizationIdentifier": "io.vigour.ex",
@@ -117,7 +116,7 @@
           }
         },
         "android": {
-          "location": "http://192.168.2.23:9090/",
+          "location": "http://localhost:9090/",
           "productName": "Vigourous example",
           "applicationId": "io.vigour.vigourexample",
           "appIndexPath": "index.html",
