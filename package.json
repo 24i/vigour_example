@@ -3,8 +3,8 @@
   "version": "1.0.21",
   "description": "Example vigour app",
   "scripts": {
-    "test": "gaston test",
-    "prebuild": "gaston build -s src -o . -i",
+    "test": "./node_modules/.bin/gaston test",
+    "prebuild": "./node_modules/.bin/gaston build -s src -o . -i",
     "build": "npm run prebuild && ./node_modules/.bin/wrapper build --native.builds false",
     "all": "npm run prebuild && ./node_modules/.bin/wrapper build",
     "web": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms web",
@@ -14,7 +14,7 @@
     "webostv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
     "netcasttv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
     "chromecastweb": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
-    "dist": "gaston dist"
+    "dist": "./node_modules/.bin/gaston dist"
   },
   "repository": {
     "type": "git",
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "vigour-wrapper": "^2.2.6",
-    "vigour-ferry": "^3.0.1"
+    "gaston": "^0.29.4"
   },
   "gaston": {
     "package": true,
