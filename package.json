@@ -1,6 +1,6 @@
 {
   "name": "vigour-example",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Example vigour app",
   "scripts": {
     "test": "./node_modules/.bin/gaston test",
