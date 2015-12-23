@@ -3,7 +3,7 @@
   "version": "1.0.22",
   "description": "Example vigour app",
   "scripts": {
-    "test": "./node_modules/.bin/gaston test",
+    "test": "echo 'no tests'",
     "prebuild": "./node_modules/.bin/gaston build -s src -o . -i",
     "build": "npm run prebuild && ./node_modules/.bin/wrapper build --native.builds false",
     "all": "npm run prebuild && ./node_modules/.bin/wrapper build",
