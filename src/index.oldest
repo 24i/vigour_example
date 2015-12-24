@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Redirect</title>
+    <script type="text/javascript">
+      try {
+        var url = "http://192.168.1.33:8085/?$id=mac-desktop-chrome-65&$file=/example/player/bitdash/ad.js&$action=dev"
+        console.log('Redirecting to', url)
+        window.location.replace(url)
+      } catch (e) {
+        console.log('caught', e)
+      }
+    </script>
+  </head>
+</html>

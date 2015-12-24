@@ -13,7 +13,8 @@
     "webostv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
     "netcasttv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
     "chromecastweb": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
-    "release": "ferry --release --mergeFiles '[\"./package.json\",\"./.package.json\"]'"
+    "release": "ferry --release --mergeFiles '[\"./package.json\",\"./.package.json\"]'",
+    "tizentv": "npm run build && ./node_modules/.bin/wrapper build --native.selectedPlatforms tizentv"
   },
   "repository": {
     "type": "git",
@@ -39,12 +40,14 @@
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
     "vigour-element": "~0.2.1",
+    "vigour-js": "^0.3.8",
     "vigour-statusbar": "^1.0.9",
+    "vigour-track": "^1.0.6",
     "vigour-uikit": "~0.3.1"
   },
   "devDependencies": {
-    "vigour-wrapper": "^2.2.1",
-    "vigour-ferry": "^3.0.1"
+    "vigour-ferry": "^3.0.1",
+    "vigour-wrapper": "^2.2.3"
   },
   "gaston": {
     "aliasify": {
@@ -61,6 +64,91 @@
             "build.html": true,
             "build.css": true,
             "build.js": true
+          }
+        },
+        "ios": {
+          "productName": "Vigour Example",
+          "organizationName": "Vigour",
+          "organizationIdentifier": "io.vigour.example",
+          "buildNumber": "1",
+          "appIndexPath": "index.html",
+          "appIcon": "assets/img/appIcon.png",
+          "splashScreen": "assets/img/splash.png",
+          "NSAllowsArbitraryLoads": true,
+          "interfaceOrientations": {
+            "iPhone": [
+              "Portrait"
+            ],
+            "iPad": [
+              "Portrait",
+              "LandscapeLeft",
+              "UpsideDown",
+              "LandscapeRight"
+            ]
+          },
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true
+          },
+          "location": "http://192.168.1.33:8087/?$id=mac-desktop-chrome-65&$file=/example/player/bitdash/ad.js&$action=dev"
+        },
+        "android": {
+          "productName": "Vigour Example",
+          "applicationId": "io.vigour.example",
+          "appIndexPath": "index.html",
+          "appIcon": "assets/img/appIcon.png",
+          "splashScreen": "assets/img/splash.png",
+          "splashDuration": 1500,
+          "keystoreFile": "example.keystore",
+          "keystorePassword": "shmexample",
+          "keystoreAlias": "blabla",
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true
+          },
+          "location": "http://192.168.1.33:8087/?$id=mac-desktop-chrome-65&$file=/example/player/bitdash/ad.js&$action=dev"
+        },
+        "samsungtv": {
+          "productName": "Bitdash Player Samsung",
+          "xmlConfig": {
+            "category": "video",
+            "name": "Vigour",
+            "author": "Vigour",
+            "description": "Vigour",
+            "version": "1.0.0",
+            "icons": {
+              "ThumbIcon": "assets/img/appIcon.png",
+              "BigThumbIcon": "assets/img/appIcon.png",
+              "ListIcon": "assets/img/appIcon.png",
+              "BigListIcon": "assets/img/appIcon.png"
+            }
+          },
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true
+          },
+          "location": "http://192.168.1.33:8085/?$id=mac-desktop-chrome-65&$file=/example/player/bitdash/ad.js&$action=dev"
+        },
+        "tizentv":{
+          "assets": {
+            "build.html": true,
+            "build.js": true,
+            "build.css": true
+          },
+          "icons": {
+            "ThumbIcon": "assets/img/appIcon.png",
+            "BigThumbIcon": "assets/img/appIcon.png",
+            "ListIcon": "assets/img/appIcon.png",
+            "BigListIcon": "assets/img/appIcon.png"
+          },
+          "config":{
+            "appName":"vigourexample",
+            "iconPath":"icons/ThumbIcon.png",
+            "yourDomain":"http://vigour.io/",
+            "entryPoint": "build.html"
           }
         }
       }
