@@ -9,8 +9,10 @@ var app = new App({
 var Element = require('vigour-element')
 var ui = require('vigour-uikit')
 var TextElement = require('vigour-uikit/lib/text/element')
-// var statusBar = require('vigour-statusbar')
+var Button = require('vigour-uikit/lib/form/button')
+var statusBar = require('vigour-statusbar')
 var env = require('vigour-env')
+var facebook = require('vigour-facebook')
 
 var envTester = new Element({
   title: new ui.H3('vigour-env'),
@@ -72,30 +74,45 @@ var envTester = new Element({
     text: env.ready
   })
 })
-//
-// var statusBarTester = new Element({
-//   title: new ui.H2('vigour-statusbar'),
-//   'display': new ui.Input({
-//     text: statusBar.display
-//   }),
-//   'background color': new ui.Input({
-//     text: 'statusBar.background.color'
-//   }),
-//   'background opacity': new ui.Input({
-//     text: 'statusBar.background.opacity'
-//   }),
-//   'foreground color': new ui.Input({
-//     text: 'statusBar.foreground.color'
-//   }),
-//   'foreground opacity': new ui.Input({
-//     text: 'statusBar.foreground.opacity'
-//   })
-// })
+
+var statusBarTester = new Element({
+  title: new ui.H2('vigour-statusbar'),
+  toggle: new Button({
+    text: 'toggle status bar',
+    on: {
+      click: function () {
+        if (statusBar.display.val === 'top') {
+          console.log('setting hidden')
+          statusBar.display.val = 'hidden'
+        } else {
+          console.log('setting top')
+          statusBar.display.val = 'top'
+        }
+      }
+    }
+  })
+})
+
+var facebookTester = new Element({
+  title: new ui.H2('vigour-facebook'),
+  share: new Button({
+    text: 'Share via facebook',
+    on: {
+      click: function () {
+        facebook.share.once(function () {
+          console.log('Done sharing')
+        })
+        facebook.share.val = 'http://perdu.com'
+      }
+    }
+  })
+})
 
 var pluginTester = new Element({
   title: new ui.H2('Plugin tester'),
-  env: envTester
-//   statusBar: statusBarTester
+  env: envTester,
+  statusBar: statusBarTester,
+  facebook: facebookTester
 })
 
 app.set({

@@ -41,6 +41,7 @@
   "dependencies": {
     "vigour-element": "~0.2.1",
     "vigour-env": "^1.0.14",
+    "vigour-facebook": "^1.0.7",
     "vigour-statusbar": "^1.0.9",
     "vigour-uikit": "~0.3.1"
   },
@@ -78,6 +79,25 @@
     }
   },
   "vigour": {
+    "statusbar": {
+      "display": "top",
+      "background": {
+        "color": "0FFF30",
+        "opacity": 0.5
+      },
+      "text": {
+        "color": "33EE04",
+        "opacity": 0.8
+      }
+    },
+    "facebook": {
+      "appId": "1534460276875190",
+      "scope": "public_profile,email",
+      "web": {
+        "version": "v2.5",
+        "src": "//connect.facebook.net/en_NL/sdk.js"
+      }
+    },
     "native": {
       "platforms": {
         "web": {
