@@ -10,9 +10,17 @@ var Element = require('vigour-element')
 var ui = require('vigour-uikit')
 var TextElement = require('vigour-uikit/lib/text/element')
 var Button = require('vigour-uikit/lib/form/button')
-var statusBar = require('vigour-statusbar')
+
 var env = require('vigour-env')
+var orientation = require('vigour-orientation')
+var statusBar = require('vigour-statusbar')
 var facebook = require('vigour-facebook')
+
+orientation.on('data', function (currentOrientation) {
+  console.log('orientation', currentOrientation)
+})
+
+statusBar.val = true
 
 var envTester = new Element({
   title: new ui.H3('vigour-env'),
@@ -75,8 +83,15 @@ var envTester = new Element({
   })
 })
 
+var orientationTester = new Element({
+  title: new ui.H3('vigour-orientation'),
+  orientation: new TextElement({
+    text: orientation
+  })
+})
+
 var statusBarTester = new Element({
-  title: new ui.H2('vigour-statusbar'),
+  title: new ui.H3('vigour-statusbar'),
   toggle: new Button({
     text: 'toggle status bar',
     on: {
@@ -94,7 +109,7 @@ var statusBarTester = new Element({
 })
 
 var facebookTester = new Element({
-  title: new ui.H2('vigour-facebook'),
+  title: new ui.H3('vigour-facebook'),
   share: new Button({
     text: 'Share via facebook',
     on: {
@@ -111,6 +126,7 @@ var facebookTester = new Element({
 var pluginTester = new Element({
   title: new ui.H2('Plugin tester'),
   env: envTester,
+  orientation: orientationTester,
   statusBar: statusBarTester,
   facebook: facebookTester
 })

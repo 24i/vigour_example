@@ -42,6 +42,7 @@
     "vigour-element": "~0.2.1",
     "vigour-env": "^1.0.14",
     "vigour-facebook": "^1.0.7",
+    "vigour-orientation": "^1.0.7",
     "vigour-statusbar": "^1.0.9",
     "vigour-uikit": "~0.3.1"
   },
