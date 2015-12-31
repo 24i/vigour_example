@@ -10,18 +10,18 @@ var Element = require('vigour-element')
 var ui = require('vigour-uikit')
 var TextElement = require('vigour-uikit/lib/text/element')
 var Button = require('vigour-uikit/lib/form/button')
-
+//
 var env = require('vigour-env')
-var orientation = require('vigour-orientation')
-var statusBar = require('vigour-statusbar')
-var facebook = require('vigour-facebook')
-
-orientation.on('data', function (currentOrientation) {
-  console.log('orientation', currentOrientation)
-})
-
-statusBar.val = true
-
+// var orientation = require('vigour-orientation')
+// var statusBar = require('vigour-statusbar')
+// var facebook = require('vigour-facebook')
+//
+// orientation.on('data', function (currentOrientation) {
+//   console.log('orientation', currentOrientation)
+// })
+//
+// statusBar.val = true
+//
 var envTester = new Element({
   title: new ui.H3('vigour-env'),
   paused: new TextElement({
@@ -82,53 +82,53 @@ var envTester = new Element({
     text: env.ready
   })
 })
-
-var orientationTester = new Element({
-  title: new ui.H3('vigour-orientation'),
-  orientation: new TextElement({
-    text: orientation
-  })
-})
-
-var statusBarTester = new Element({
-  title: new ui.H3('vigour-statusbar'),
-  toggle: new Button({
-    text: 'toggle status bar',
-    on: {
-      click: function () {
-        if (statusBar.display.val === 'top') {
-          console.log('setting hidden')
-          statusBar.display.val = 'hidden'
-        } else {
-          console.log('setting top')
-          statusBar.display.val = 'top'
-        }
-      }
-    }
-  })
-})
-
-var facebookTester = new Element({
-  title: new ui.H3('vigour-facebook'),
-  share: new Button({
-    text: 'Share via facebook',
-    on: {
-      click: function () {
-        facebook.share.once(function () {
-          console.log('Done sharing')
-        })
-        facebook.share.val = 'http://perdu.com'
-      }
-    }
-  })
-})
-
+//
+// var orientationTester = new Element({
+//   title: new ui.H3('vigour-orientation'),
+//   orientation: new TextElement({
+//     text: orientation
+//   })
+// })
+//
+// var statusBarTester = new Element({
+//   title: new ui.H3('vigour-statusbar'),
+//   toggle: new Button({
+//     text: 'toggle status bar',
+//     on: {
+//       click: function () {
+//         if (statusBar.display.val === 'top') {
+//           console.log('setting hidden')
+//           statusBar.display.val = 'hidden'
+//         } else {
+//           console.log('setting top')
+//           statusBar.display.val = 'top'
+//         }
+//       }
+//     }
+//   })
+// })
+//
+// var facebookTester = new Element({
+//   title: new ui.H3('vigour-facebook'),
+//   share: new Button({
+//     text: 'Share via facebook',
+//     on: {
+//       click: function () {
+//         facebook.share.once(function () {
+//           console.log('Done sharing')
+//         })
+//         facebook.share.val = 'http://perdu.com'
+//       }
+//     }
+//   })
+// })
+//
 var pluginTester = new Element({
   title: new ui.H2('Plugin tester'),
-  env: envTester,
-  orientation: orientationTester,
-  statusBar: statusBarTester,
-  facebook: facebookTester
+  env: envTester
+  // orientation: orientationTester,
+  // statusBar: statusBarTester,
+  // facebook: facebookTester
 })
 
 app.set({
