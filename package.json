@@ -39,12 +39,13 @@
   },
   "homepage": "https://github.com/vigour-io/vigour-example",
   "dependencies": {
-    "vigour-element": "^0.2.3",
+    "vigour-js": "vigour-io/vjs#develop",
+    "vigour-uikit": "vigour-io/uikit#develop",
+    "vigour-element": "vigour-io/element#develop",
     "vigour-env": "^1.0.14",
     "vigour-facebook": "^1.0.7",
     "vigour-orientation": "^1.0.8",
-    "vigour-statusbar": "^1.0.10",
-    "vigour-uikit": "^0.6.3"
+    "vigour-statusbar": "^1.0.10"
   },
   "devDependencies": {
     "vigour-wrapper": "^2.2.6",
