@@ -8,5 +8,6 @@ while [[ true ]]; do
   git add .
   git commit -m 'update'
   git push origin
+  printf "yay pushed $CNT\n"
   sleep 5
 done
