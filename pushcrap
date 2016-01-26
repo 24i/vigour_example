@@ -2,9 +2,9 @@
 CNT=0
 
 while [[ true ]]; do
+  npm version patch
   CNT=$((CNT+1))
   printf $CNT > cntfile
-  npm version patch
   git add .
   git commit -m 'update'
   git push origin
