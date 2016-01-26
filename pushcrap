@@ -1,0 +1,19 @@
+#!/bin/bash
+STATE=true
+writefile() {
+  if [$STATE = true] ; then
+    STATE=false
+    printf shibs > file;
+  else
+    STATE=true
+    printf larft > file;
+  fi
+}
+
+while [[ true ]]; do
+  writefile
+  git add .
+  git commit -m 'update'
+  git push origin
+  sleep 5
+done
