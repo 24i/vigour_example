@@ -1,6 +1,6 @@
 {
   "name": "vigour-example",
-  "version": "1.0.1242",
+  "version": "1.0.1243",
   "description": "Example vigour app",
   "scripts": {
     "test": "echo 'no tests'",
