@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "dev": "vpack ./test/index.js --package -p 8080 -o --template template.html --no-info",
+    "dev": "vpack ./test/index.js --package -p 8080 -o --no-info",
     "test": "node test"
   },
   "devDependencies": {
