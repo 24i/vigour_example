@@ -1,20 +1,14 @@
-# vigour-example
-Example vigour app
-
 Demonstrates the vigour workflow from start to finish
 
-## tl;dr
-`npm run`
+## Getting ready
+To be able to run you need `vpack` runner and `vigour-element` for browser rendering.
+```shell
+npm install vpack -g
+npm install
+```
 
-## Develop
-`npm start`
-
-## Release
-- `npm run release`
-
-## Build
-- `npm run build -- ios android`
-- `npm run build # all platforms listed in package.json[vigour.native.platforms]`
-
-## Deploy
-- `npm run deploy`
+## Run
+To run using `vpack`, run:
+```shell
+npm run dev
+```
