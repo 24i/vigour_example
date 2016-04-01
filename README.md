@@ -1,3 +1,5 @@
+![Vigour](https://s3.amazonaws.com/f.cl.ly/items/1f0p1r2F273j221O1c40/Image%202016-04-01%20at%207.24.38%20PM.png)
+
 Demonstrates the vigour workflow from start to finish
 
 ## Getting ready
