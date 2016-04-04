@@ -1,160 +1,35 @@
 {
   "name": "vigour-example",
-  "version": "1.0.25",
-  "description": "Example vigour app",
-  "scripts": {
-    "test": "echo 'no tests'",
-    "prebuild": "./node_modules/.bin/gaston build -s src -o . -i",
-    "build": "npm run prebuild && ./node_modules/.bin/wrapper build --native.builds false",
-    "all": "npm run prebuild && ./node_modules/.bin/wrapper build",
-    "web": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms web",
-    "ios": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms ios",
-    "android": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms android",
-    "samsungtv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms samsungtv",
-    "webostv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms webostv",
-    "netcasttv": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms netcasttv",
-    "chromecastweb": "npm run prebuild && ./node_modules/.bin/wrapper build --native.selectedPlatforms chromecastweb",
-    "dist": "./node_modules/.bin/gaston dist"
-  },
+  "description": "vigour example",
+  "version": "2.0.0",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vigour-io/vigour-example.git"
+    "url": "https://github.com/vigour-io/example.git"
   },
+  "author": "vigour.io <dev@vigour.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vigour-io/example/issues"
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vpack ./test/index.js --package -p 8080 -o --no-info",
+    "test": "node test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vigour-element": "^1.3.4"
+  },
+  "homepage": "https://github.com/vigour-io/example",
   "keywords": [
     "vigour",
     "example"
   ],
-  "author": "Vigour",
-  "license": "MIT",
   "contributors": [
-    "Shawn Inder <shawn@vigour.io>",
-    "Alexander Van Der Werff <alex@vigour.io>",
-    "Michiel Van Liempt <michiel@vigour.io>",
-    "Renan Carvalho <renan@vigour.io>",
-    "Andre Padez <andre@vigour.io>"
+    "Nika Tomadze"
   ],
-  "engines": {},
-  "bugs": {
-    "url": "https://github.com/vigour-io/vigour-example/issues"
-  },
-  "homepage": "https://github.com/vigour-io/vigour-example",
-  "dependencies": {
-    "vigour-element": "^0.2.3",
-    "vigour-env": "^1.0.14",
-    "vigour-facebook": "^1.0.7",
-    "vigour-orientation": "^1.0.8",
-    "vigour-statusbar": "^1.0.10",
-    "vigour-uikit": "^0.6.3"
-  },
-  "devDependencies": {
-    "vigour-wrapper": "^2.2.6",
-    "gaston": "^0.29.5"
-  },
-  "gaston": {
-    "package": true,
-    "aliasify": {
-      "uikit": "./node_modules/vigour-uikit"
-    },
-    "dist": {
-      "web": {
-        "appcache": true,
-        "root": "build/web",
-        "files": [
-          "**/*.*"
-        ]
-      },
-      "ios": {
-        "appcache": true,
-        "root": "build/ios/vigour-native/www",
-        "files": [
-          "**/*.*"
-        ]
-      },
-      "android": {
-        "appcache": true,
-        "root": "build/android/app/src/main/assets",
-        "files": [
-          "**/*.*"
-        ]
-      }
-    }
-  },
-  "vigour": {
-    "statusbar": {
-      "display": "top",
-      "background": {
-        "color": "0FFF30",
-        "opacity": 0.5
-      },
-      "text": {
-        "color": "33EE04",
-        "opacity": 0.8
-      }
-    },
-    "facebook": {
-      "appId": "1534460276875190",
-      "scope": "public_profile,email",
-      "web": {
-        "version": "v2.5",
-        "src": "//connect.facebook.net/en_NL/sdk.js"
-      }
-    },
-    "native": {
-      "platforms": {
-        "web": {
-          "location": "http://localhost:9090/",
-          "productName": "Vigourous example",
-          "appIndexPath": "build.html",
-          "assets": {
-            "build.html": true,
-            "build.css": true,
-            "build.js": true
-          }
-        },
-        "ios": {
-          "location": "http://localhost:9090/",
-          "productName": "Vigourous example",
-          "organizationName": "Vigour",
-          "organizationIdentifier": "io.vigour.ex",
-          "buildNumber": "1",
-          "appIndexPath": "index.html",
-          "appUrlIdentifier": "io.vigour.example",
-          "appUrlScheme": "cc",
-          "appIcon": "assets/img/appIcon.png",
-          "splashScreen": "assets/img/splash.png",
-          "interfaceOrientations": {
-            "iPhone": [
-              "Portrait"
-            ],
-            "iPad": [
-              "LandscapeLeft",
-              "LandscapeRight"
-            ]
-          },
-          "assets": {
-            "build.js": true,
-            "build.css": true,
-            "build.html": true
-          }
-        },
-        "android": {
-          "location": "http://localhost:9090/",
-          "productName": "Vigourous example",
-          "applicationId": "io.vigour.vigourexample",
-          "appIndexPath": "index.html",
-          "appIcon": "assets/img/appIcon.png",
-          "splashScreen": "assets/img/splash.png",
-          "splashDuration": 1500,
-          "keystoreFile": "example.keystore",
-          "keystorePassword": "shmexample",
-          "keystoreAlias": "blabla",
-          "assets": {
-            "build.js": true,
-            "build.css": true,
-            "build.html": true
-          }
-        }
-      }
-    }
+  "engines": {
+    "node": ">=4"
   }
 }
