@@ -1,15 +1,20 @@
-![Vigour](https://s3.amazonaws.com/f.cl.ly/items/1f0p1r2F273j221O1c40/Image%202016-04-01%20at%207.24.38%20PM.png)
+## To use as a component
+```shell
+npm i vigour-play-example --save
+```
 
-Demonstrates the vigour workflow from start to finish
+```javascript
+exports.thing = { type: 'example' }
+```
+To check code for isolated working example please look at [`test/index.js`](https://github.com/vigour-io/play-example/blob/master/test/index.js).
 
-## Getting ready
-To be able to run, you need `vpack` runner and `vigour-element` for browser rendering.
+
+## To run in isolation
+To be able to run in isolation, you need `vpack` runner and `vigour-element` for browser rendering.
 ```shell
 npm i vpack -g && npm i
 ```
-
-## Run
-To run using `vpack`, run:
+And then to run using `vpack`, use:
 ```shell
 npm run dev
 ```
