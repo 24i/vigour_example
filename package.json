@@ -15,7 +15,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vpack ./platform/main.js --package -p 8080 -o --no-info",
-    "test": "vtest --node true --files '[\"./app/index.js\",\"./test/index.js\"]' | tap-difflet",
+    "test": "npm run test-node && npm run test-browser",
+    "test-node": "vtest --node true --files '[\"./app/index.js\",\"./test/index.js\"]' | tap-difflet",
     "test-browser": "vtest --files '[\"./app/index.js\",\"./test/index.js\"]' | tap-difflet",
     "test-live": "vtest --url http://localhost:8080/index.html --files ./test/index.js | tap-difflet"
   },
