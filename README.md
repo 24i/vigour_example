@@ -13,3 +13,5 @@ To run using `vpack`, run:
 ```shell
 npm run dev
 ```
+
+Play related example moved to [play-example](https://github.com/vigour-io/play-example) repository.
