@@ -14,12 +14,18 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "dev": "vpack ./test/index.js --package -p 8080 -o --no-info",
-    "test": "node test"
+    "dev": "vpack ./platform/main.js --package -p 8080 -o --no-info",
+    "test": "vtest --node true --files '[\"./app/index.js\",\"./test/index.js\"]' | tap-difflet",
+    "test-browser": "vtest --files '[\"./app/index.js\",\"./test/index.js\"]' | tap-difflet",
+    "test-live": "vtest --url http://localhost:8080/index.html --files ./test/index.js | tap-difflet"
   },
   "dependencies": {},
   "devDependencies": {
-    "vigour-element": "^1.3.4"
+    "node-lessify": "^0.1.4",
+    "tap-difflet": "^0.4.0",
+    "tape": "^4.5.1",
+    "vigour-element": "^1.3.4",
+    "vigour-test": "^1.0.2"
   },
   "homepage": "https://github.com/vigour-io/example",
   "keywords": [
@@ -31,5 +37,10 @@
   ],
   "engines": {
     "node": ">=4"
+  },
+  "browserify": {
+    "transform": [
+      "node-lessify"
+    ]
   }
 }

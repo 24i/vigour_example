@@ -1,9 +1,8 @@
 'use strict'
 
-var e = require('vigour-element/e')
-var thing = require('../lib')
+var test = require('tape')
 
-var app = global.app = e({
-  DOM: document.body,
-  thing
+test('app', function (t) {
+  t.plan(1)
+  t.equal(global.app.thing.hello.world.val, 'Hello World!')
 })
