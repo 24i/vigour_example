@@ -1,0 +1,5 @@
+/* This should override de component default  */
+:root {
+  --color: red;
+}
+
