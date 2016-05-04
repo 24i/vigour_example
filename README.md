@@ -2,6 +2,8 @@
 
 Demonstrates the vigour workflow from start to finish
 
+If you are looking for a play component example, [this repository](https://github.com/vigour-io/play-example/) will fit more.
+
 ## Getting ready
 To be able to run, you need `vpack` runner and `vigour-element` for browser rendering.
 ```shell
